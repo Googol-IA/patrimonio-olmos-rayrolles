@@ -1,0 +1,1774 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Patrimonio Olmos Rayrolles</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+<style>
+:root{
+  color-scheme:light;
+  --bg:#f4f3f0; --surface:#fcfcfb; --surface-2:#f0efec; --border:#e3e2dd; --grid:#ecebe7;
+  --text:#0b0b0b; --text-2:#52514e; --text-3:#7a7974;
+  --accent:#2a78d6; --neutral:#9b9a94;
+  --c1:#2a78d6; --c2:#eb6834; --c3:#1baf7a; --c4:#eda100; --c5:#e87ba4; --c6:#008300; --c7:#6250d6; --c8:#e34948;
+  --pos:#2a78d6; --neg:#e34948; --good:#0a7f3f; --bad:#c62f2f;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#121211; --surface:#1a1a19; --surface-2:#232321; --border:#2f2f2c; --grid:#2a2a28;
+    --text:#f0efec; --text-2:#c3c2b7; --text-3:#8f8e86;
+    --accent:#3987e5; --neutral:#6f6e69;
+    --c1:#3987e5; --c2:#d95926; --c3:#199e70; --c4:#c98500; --c5:#d55181; --c6:#008300; --c7:#9085e9; --c8:#e66767;
+    --pos:#3987e5; --neg:#e66767; --good:#4cc27e; --bad:#ff7b7b;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#121211; --surface:#1a1a19; --surface-2:#232321; --border:#2f2f2c; --grid:#2a2a28;
+  --text:#f0efec; --text-2:#c3c2b7; --text-3:#8f8e86;
+  --accent:#3987e5; --neutral:#6f6e69;
+  --c1:#3987e5; --c2:#d95926; --c3:#199e70; --c4:#c98500; --c5:#d55181; --c6:#008300; --c7:#9085e9; --c8:#e66767;
+  --pos:#3987e5; --neg:#e66767; --good:#4cc27e; --bad:#ff7b7b;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-variant-numeric:tabular-nums}
+header{position:sticky;top:0;z-index:10;background:var(--surface);border-bottom:1px solid var(--border)}
+.top{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:12px 24px}
+.top h1{font-size:18px;margin:0;font-weight:650;letter-spacing:-.01em}
+.top .meta{color:var(--text-3);font-size:12px}
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+nav{display:flex;gap:2px;padding:0 20px;overflow-x:auto}
+nav button{background:none;border:0;border-bottom:2px solid transparent;color:var(--text-2);padding:10px 12px;font:inherit;cursor:pointer;white-space:nowrap}
+nav button.on{color:var(--text);border-color:var(--accent);font-weight:600}
+main{max-width:1320px;margin:0 auto;padding:20px 24px 80px}
+section.tab{display:none} section.tab.on{display:block}
+.seg{display:inline-flex;flex-wrap:wrap;background:var(--surface-2);border-radius:8px;padding:2px;gap:2px}
+.seg button{border:0;background:none;color:var(--text-2);padding:5px 10px;border-radius:6px;font:inherit;font-size:13px;cursor:pointer}
+.seg button.on{background:var(--surface);color:var(--text);box-shadow:0 1px 2px rgba(0,0,0,.12);font-weight:600}
+.btn{border:1px solid var(--border);background:var(--surface);color:var(--text);padding:6px 12px;border-radius:8px;font:inherit;font-size:13px;cursor:pointer}
+.btn:hover{background:var(--surface-2)} .btn:disabled{opacity:.5;cursor:default}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.sm{padding:2px 8px;font-size:12px}
+.grid{display:grid;gap:16px}
+.g6{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g2{grid-template-columns:repeat(auto-fit,minmax(420px,1fr))}
+.g21{grid-template-columns:2fr 1fr}
+@media (max-width:900px){.g21,.g2{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 18px;min-width:0}
+.card h2{font-size:14px;font-weight:600;margin:0 0 2px}
+.card h3{font-size:13px;font-weight:600;margin:16px 0 6px}
+.card .sub{color:var(--text-3);font-size:12px;margin:0 0 12px}
+.card-h{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.kpi .lbl{color:var(--text-2);font-size:12px}
+.kpi .val{font-size:24px;font-weight:650;letter-spacing:-.02em;margin-top:2px}
+.kpi .det{font-size:12px;color:var(--text-3);margin-top:2px}
+.up{color:var(--good)} .down{color:var(--bad)}
+.chip{display:inline-block;font-size:11px;padding:1px 7px;border-radius:99px;background:var(--surface-2);color:var(--text-2);font-weight:500}
+.chart{position:relative;height:300px} .chart.tall{height:380px} .chart.short{height:240px}
+.mt{margin-top:16px}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:7px 8px;text-align:right;border-bottom:1px solid var(--grid);white-space:nowrap}
+th{color:var(--text-2);font-weight:600;font-size:12px;position:sticky;top:0;background:var(--surface);z-index:1}
+th:first-child,td:first-child{text-align:left}
+td.l,th.l{text-align:left}
+tr.tot td{font-weight:650;border-top:1px solid var(--border)}
+th.sort{cursor:pointer} th.sort:hover{color:var(--text)}
+.tw{overflow-x:auto}
+.tw.scroll{max-height:520px;overflow:auto}
+.dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.owner{display:flex;flex-direction:column;gap:6px}
+.owner .name{display:flex;align-items:center;gap:8px;font-weight:650;font-size:15px;flex-wrap:wrap}
+.row{display:flex;justify-content:space-between;gap:10px;font-size:13px;padding:3px 0;border-bottom:1px solid var(--grid)}
+.row span:first-child{color:var(--text-2)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--text-2);margin-bottom:8px}
+.legend span{display:inline-flex;align-items:center}
+.heat td{text-align:center;font-size:12px;padding:6px 4px}
+label.f{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--text-2)}
+input,select,textarea{background:var(--surface);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:6px 8px;font:inherit;font-size:13px}
+label.f input,label.f select{width:100%}
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:14px;align-items:end}
+.note{font-size:12px;color:var(--text-3);margin-top:10px}
+.banner{background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:10px 14px;font-size:13px;margin-bottom:16px;display:none}
+.banner.show{display:block}
+.bar-prog{height:8px;background:var(--surface-2);border-radius:99px;overflow:hidden;margin-top:8px}
+.bar-prog i{display:block;height:100%;background:var(--accent);border-radius:99px}
+.status{font-size:12px;font-weight:600}
+#cargando{padding:80px 20px;text-align:center;color:var(--text-2)}
+/* hoja A4 para el banco: colores fijos (siempre se imprime en claro) */
+.hoja-wrap{overflow-x:auto;padding:4px 0 20px}
+#hoja{width:190mm;min-height:277mm;margin:0 auto;background:#fff;color:#16161a;box-shadow:0 2px 14px rgba(0,0,0,.18);padding:9mm 10mm;
+  font:8.4pt/1.32 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;box-sizing:border-box;font-variant-numeric:tabular-nums}
+#hoja h1{font-size:14pt;margin:0;font-weight:700;color:#0d2c54}
+#hoja .h-sub{color:#555;font-size:8pt;margin-top:1mm}
+#hoja .h-top{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid #0d2c54;padding-bottom:2.5mm;margin-bottom:3mm}
+#hoja h3{font-size:9pt;margin:2.8mm 0 1mm;color:#0d2c54;text-transform:uppercase;letter-spacing:.04em;border-bottom:1px solid #d5dbe3;padding-bottom:.8mm}
+#hoja table{width:100%;border-collapse:collapse;font-size:8.1pt}
+#hoja td,#hoja th{padding:.55mm 1.2mm;border-bottom:1px solid #eceef2;text-align:right;white-space:normal;position:static;background:none;color:inherit}
+#hoja th{font-weight:600;color:#555;font-size:7.6pt}
+#hoja td:first-child,#hoja th:first-child{text-align:left;color:#555}
+#hoja table.tit td,#hoja table.tit th{text-align:left} #hoja table.tit td:first-child{width:27%}
+#hoja table.inm td:nth-child(-n+3),#hoja table.inm th:nth-child(-n+3){text-align:left}
+#hoja tr.t td{font-weight:700;border-top:1px solid #9aa6b5;color:#16161a}
+#hoja .cols{display:grid;grid-template-columns:1fr 1fr;gap:5mm}
+#hoja .kp{display:grid;grid-template-columns:repeat(6,1fr);gap:2mm;margin-bottom:1mm}
+#hoja .kp div{background:#f2f5f9;border-radius:1.5mm;padding:1.8mm 2mm}
+#hoja .kp b{display:block;font-size:11pt;color:#0d2c54;margin-top:.5mm}
+#hoja .kp span{font-size:7pt;color:#555}
+#hoja .doc{columns:3;font-size:7.8pt;margin:0;padding-left:4mm}
+#hoja .pie{margin-top:3mm;font-size:6.9pt;color:#777;border-top:1px solid #d5dbe3;padding-top:1.5mm}
+@media print{
+  @page{size:A4;margin:10mm}
+  html,body{background:#fff!important}
+  header,#banner,#cargando,#login,#savebar,section.tab{display:none!important}
+  main{padding:0!important;max-width:none!important;margin:0!important}
+  #t-banco{display:block!important} #t-banco>.card{display:none!important}
+  .hoja-wrap{padding:0;overflow:visible}
+  #hoja{box-shadow:none;margin:0;width:auto;min-height:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+#login{position:fixed;inset:0;z-index:50;background:var(--bg);display:none;align-items:center;justify-content:center;padding:16px}
+#login form{width:100%;max-width:360px;display:flex;flex-direction:column;gap:12px}
+#login input[type=password]{width:100%;padding:10px 12px;font-size:15px}
+#lgError{color:var(--bad);font-size:13px;min-height:18px}
+/* editor */
+table.ed td{padding:3px 4px} table.ed th{padding:6px 4px}
+table.ed input,table.ed select{width:100%;min-width:70px;padding:4px 6px;border-radius:6px}
+table.ed input.n{text-align:right}
+table.ed td.x{width:28px}
+.del{border:0;background:none;color:var(--text-3);cursor:pointer;font-size:15px;padding:2px 6px;border-radius:6px}
+.del:hover{background:var(--surface-2);color:var(--bad)}
+.savebar{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--border);padding:10px 24px;display:none;justify-content:flex-end;gap:10px;align-items:center;z-index:20}
+.savebar.show{display:flex}
+.savebar span{margin-right:auto;font-size:13px;color:var(--text-2)}
+.lock{padding:14px;background:var(--surface-2);border-radius:10px;font-size:13px;color:var(--text-2)}
+.res-isin{margin-top:8px}
+@media (max-width:600px){.top,main{padding-left:16px;padding-right:16px}nav{padding:0 10px}.kpi .val{font-size:20px}.g2{grid-template-columns:1fr}
+  .g6{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.g6 .card{padding:12px}.kpi .val{font-size:18px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="top">
+    <div>
+      <h1>Patrimonio Olmos Rayrolles</h1>
+      <div class="meta" id="meta">Cargando…</div>
+    </div>
+    <div class="controls">
+      <div class="seg" id="scopeSeg" title="Ver la cartera de…"></div>
+      <button class="btn" id="btnRefresh" title="Descarga precios de internet y vuelve a leer los datos">⟳ Actualizar</button>
+      <button class="btn" id="btnTheme" title="Tema claro/oscuro">◐</button>
+    </div>
+  </div>
+  <nav id="tabs">
+    <button data-t="resumen" class="on">Resumen</button>
+    <button data-t="rentab">Rentabilidad</button>
+    <button data-t="fondos">Fondos</button>
+    <button data-t="grupo" id="tabGrupo">Niñas</button>
+    <button data-t="objetivos">Objetivos y proyección</button>
+    <button data-t="compara">Comparativa</button>
+    <button data-t="patrimonio">Patrimonio</button>
+    <button data-t="pisos">Pisos</button>
+    <button data-t="banco">Banco</button>
+    <button data-t="ops">Operaciones</button>
+    <button data-t="datos">Datos</button>
+  </nav>
+</header>
+
+<main>
+  <div id="login"><form class="card" id="lgForm" autocomplete="on">
+    <h2 style="font-size:17px">Patrimonio Olmos Rayrolles</h2>
+    <p class="sub" style="margin:0">Los datos están cifrados. Introduce la contraseña para verlos.</p>
+    <input type="text" name="username" value="patrimonio" autocomplete="username" hidden>
+    <input type="password" id="lgClave" autocomplete="current-password" placeholder="Contraseña" required>
+    <label style="font-size:13px;color:var(--text-2);display:flex;gap:6px;align-items:center"><input type="checkbox" id="lgRecordar"> Recordar en este dispositivo</label>
+    <div id="lgError"></div>
+    <button class="btn pri" id="lgBtn">Entrar</button>
+  </form></div>
+  <div class="banner" id="banner"></div>
+  <div id="cargando">Descargando precios y leyendo datos…</div>
+
+  <!-- RESUMEN -->
+  <section class="tab on" id="t-resumen">
+    <div class="grid g6" id="kpis"></div>
+    <div class="grid g3 mt" id="owners"></div>
+    <div class="grid g21 mt">
+      <div class="card">
+        <div class="card-h"><div><h2>Valor de la cartera vs dinero aportado</h2><p class="sub" id="evoSub"></p></div>
+          <div class="seg" id="rangeSeg"></div></div>
+        <div class="legend"><span><i class="dot" style="background:var(--accent)"></i>Valor de mercado</span><span><i class="dot" style="background:var(--neutral)"></i>Aportado neto</span></div>
+        <div class="chart tall"><canvas id="cEvo"></canvas></div>
+      </div>
+      <div class="card">
+        <h2>Distribución</h2><p class="sub">Peso de cada activo sobre el valor actual</p>
+        <div class="chart short"><canvas id="cDonut"></canvas></div>
+        <div id="donutLegend" class="mt"></div>
+      </div>
+    </div>
+    <div class="card mt">
+      <h2>Posiciones</h2><p class="sub">Precios descargados de internet · TIR = tu rentabilidad anual, teniendo en cuenta cuándo y cuánto aportaste</p>
+      <div class="tw"><table id="tPos"></table></div>
+    </div>
+  </section>
+
+  <!-- RENTABILIDAD -->
+  <section class="tab" id="t-rentab">
+    <div class="card">
+      <h2>Tu rentabilidad por año</h2>
+      <p class="sub">Lo que has ganado tú cada año: beneficio del año / capital medio que tenías invertido ese año (cuenta cuándo entró cada aportación). Debajo, el beneficio en euros.</p>
+      <div class="tw"><table id="tAnual"></table></div>
+    </div>
+    <div class="grid g2 mt">
+      <div class="card"><h2>Beneficio en euros por año</h2><p class="sub" id="gainSub"></p><div class="chart"><canvas id="cGainYear"></canvas></div></div>
+      <div class="card"><h2>Tu rentabilidad acumulada en el tiempo</h2><p class="sub" id="acSub"></p>
+        <div class="seg" id="acSeg" style="margin-bottom:10px"></div><div class="chart"><canvas id="cAcum"></canvas></div></div>
+    </div>
+    <div class="card mt">
+      <h2>Rentabilidad acumulada de tu inversión en cada activo</h2><p class="sub">Beneficio / dinero aportado en cada momento</p>
+      <div class="legend" id="idxLegend"></div>
+      <div class="chart tall"><canvas id="cIdx"></canvas></div>
+    </div>
+    <div class="card mt">
+      <h2>Tu rentabilidad mensual</h2><p class="sub" id="heatSub"></p>
+      <div class="tw"><table class="heat" id="tHeat"></table></div>
+    </div>
+    <div class="card mt">
+      <h2>Riesgo</h2><p class="sub">Volatilidad con tus rentabilidades mensuales · caída máxima de la cartera desde su máximo · Sharpe = (TIR − tipo sin riesgo) / volatilidad, con tipo sin riesgo del <input id="rf" type="number" step="0.25" value="2" style="width:60px">%</p>
+      <div class="tw"><table id="tRisk"></table></div>
+    </div>
+  </section>
+
+  <!-- FONDOS -->
+  <section class="tab" id="t-fondos">
+    <div class="seg" id="fundSeg" style="margin-bottom:16px"></div>
+    <div class="grid g6" id="fundKpis"></div>
+    <div class="card mt">
+      <h2 id="fundTitle"></h2><p class="sub" id="fundSub"></p>
+      <div class="legend" id="fundLegend"></div>
+      <div class="chart tall"><canvas id="cFund"></canvas></div>
+    </div>
+    <div class="card mt"><h2>Compras de este activo</h2><p class="sub" id="fundOpsSub"></p><div class="tw scroll"><table id="tFundOps"></table></div></div>
+  </section>
+
+  <!-- GRUPO (NIÑAS) -->
+  <section class="tab" id="t-grupo">
+    <div class="grid g2" id="grupoCards"></div>
+    <div class="grid g2 mt">
+      <div class="card"><h2 id="grupoChartT"></h2><p class="sub" id="grupoChartS"></p>
+        <div class="legend" id="grupoLegend"></div>
+        <div class="chart"><canvas id="cGrupo"></canvas></div></div>
+      <div class="card"><h2>¿Cuánto tendrá cada una?</h2><p class="sub">Proyección con la aportación actual</p>
+        <div class="form" id="grupoForm"></div>
+        <div id="grupoProy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OBJETIVOS -->
+  <section class="tab" id="t-objetivos">
+    <div class="grid g3" id="objCards"></div>
+    <div class="card mt">
+      <h2>Simulador de interés compuesto</h2><p class="sub">Parte del valor actual de la cartera seleccionada arriba. Tres escenarios: rentabilidad −3 pp / esperada / +3 pp</p>
+      <div class="form">
+        <label class="f">Capital inicial €<input type="number" id="simCap"></label>
+        <label class="f">Aportación €/mes<input type="number" id="simAp"></label>
+        <label class="f">Subida anual aportación %<input type="number" id="simSub" value="0" step="0.5"></label>
+        <label class="f">Rentabilidad esperada %<input type="number" id="simR" value="7" step="0.5"></label>
+        <label class="f">Años<input type="number" id="simY" value="15"></label>
+        <label class="f">Inflación %<input type="number" id="simI" value="2.5" step="0.1"></label>
+        <label class="f">Objetivo €<input type="number" id="simObj" value="100000"></label>
+      </div>
+      <div class="grid g6" id="simKpis"></div>
+      <div class="legend mt"><span><i class="dot" style="background:var(--c2)"></i>Pesimista</span><span><i class="dot" style="background:var(--accent)"></i>Esperado</span><span><i class="dot" style="background:var(--c3)"></i>Optimista</span><span><i class="dot" style="background:var(--neutral)"></i>Aportado</span></div>
+      <div class="chart tall"><canvas id="cSim"></canvas></div>
+    </div>
+    <div class="card mt">
+      <h2>Independencia financiera</h2><p class="sub">Capital necesario para vivir de las inversiones (regla de retirada segura)</p>
+      <div class="form">
+        <label class="f">Gasto deseado €/mes (de hoy)<input type="number" id="fiG" value="2000"></label>
+        <label class="f">Tasa de retirada %<input type="number" id="fiR" value="4" step="0.25"></label>
+        <label class="f">Contar patrimonio<select id="fiScope"></select></label>
+      </div>
+      <div id="fiOut"></div>
+    </div>
+  </section>
+
+  <!-- COMPARATIVA -->
+  <section class="tab" id="t-compara">
+    <div class="card">
+      <h2>¿Lo has hecho bien? Tu cartera frente a alternativas</h2>
+      <p class="sub">Mismas aportaciones, en las mismas fechas, invertidas de otra forma</p>
+      <div class="form">
+        <label class="f">Depósito / Letras al %<input type="number" id="cmpDep" value="2.5" step="0.25"></label>
+        <label class="f">Inflación media %<input type="number" id="cmpIpc" value="3" step="0.1"></label>
+      </div>
+      <div class="grid g6" id="cmpKpis"></div>
+      <div class="legend mt"><span><i class="dot" style="background:var(--accent)"></i>Tu cartera</span><span><i class="dot" style="background:var(--c2)"></i>Todo en MSCI World</span><span><i class="dot" style="background:var(--c3)"></i>Depósito</span><span><i class="dot" style="background:var(--neutral)"></i>Aportado + inflación (mantener poder adquisitivo)</span></div>
+      <div class="chart tall"><canvas id="cCmp"></canvas></div>
+      <p class="note">El «aportado + inflación» es el listón mínimo: por debajo de esa línea habrías perdido poder adquisitivo.</p>
+    </div>
+  </section>
+
+  <!-- PATRIMONIO -->
+  <section class="tab" id="t-patrimonio">
+    <div class="grid g6" id="patKpis"></div>
+    <div class="grid g2 mt">
+      <div class="card"><h2>Composición del patrimonio</h2><p class="sub">Fondos a valor de mercado (todas las carteras); el resto según tus datos</p><div class="chart"><canvas id="cPat"></canvas></div></div>
+      <div class="card"><h2>Ingresos mensuales</h2><p class="sub">De dónde entra el dinero cada mes</p><div class="chart"><canvas id="cIng"></canvas></div></div>
+    </div>
+    <div class="card mt"><h2>Inmuebles</h2><p class="sub">Cashflow = alquiler − gastos − cuota · rentabilidad bruta = alquiler anual / valor · neta = (alquiler − gastos) anual / valor · sobre capital = cashflow anual / patrimonio neto del piso</p><div class="tw"><table id="tInm"></table></div></div>
+    <div class="grid g2 mt">
+      <div class="card"><h2>Cashflow anual de los alquileres</h2><p class="sub">Histórico por inmueble</p><div class="legend" id="alqLegend"></div><div class="chart"><canvas id="cAlq"></canvas></div></div>
+      <div class="card"><h2>Liquidez</h2><p class="sub">Saldo por entidad</p><div class="tw"><table id="tLiq"></table></div>
+        <p class="note">El análisis completo de cada piso de inversión está en la pestaña <b>Pisos</b>.</p></div>
+    </div>
+  </section>
+
+  <!-- PISOS -->
+  <section class="tab" id="t-pisos">
+    <div class="grid g6" id="pisKpis"></div>
+    <div class="grid g3 mt" id="pisCards"></div>
+    <div class="card mt">
+      <h2>Comparativa de los pisos</h2>
+      <p class="sub">Rentabilidades «actuales» con el alquiler, los gastos y la cuota de hoy (pestaña Patrimonio). Cash-on-cash = cashflow anual / dinero que pusisteis. TIR = rentabilidad anual total, contando cashflows y la plusvalía.</p>
+      <div class="tw"><table id="tPisos"></table></div>
+    </div>
+    <div class="grid g2 mt">
+      <div class="card"><h2>Recuperación del dinero invertido</h2><p class="sub">Cashflow acumulado / fondos propios aportados, a cierre de cada año</p>
+        <div class="legend" id="recLegend"></div><div class="chart"><canvas id="cRec"></canvas></div></div>
+      <div class="card"><h2>Cashflow anual por piso</h2><p class="sub" id="cfPisSub">Después de gastos y cuota de hipoteca</p>
+        <div class="legend" id="cfPisLegend"></div><div class="chart"><canvas id="cCfPis"></canvas></div></div>
+    </div>
+    <div class="card mt">
+      <div class="card-h"><div><h2 id="pisDetT">Detalle</h2><p class="sub" id="pisDetS"></p></div><div class="seg" id="pisSeg"></div></div>
+      <div class="legend" id="pisDetLegend"></div>
+      <div class="chart"><canvas id="cPisDet"></canvas></div>
+      <div class="tw mt"><table id="tPisDet"></table></div>
+    </div>
+    <div class="card mt" id="pisHipCard">
+      <h2>Hipoteca</h2><p class="sub" id="pisHipSub"></p>
+      <div class="grid g6" id="pisHipKpis"></div>
+      <div class="legend mt"><span><i class="dot" style="background:var(--accent)"></i>Capital pendiente (cuadro de amortización)</span><span><i class="dot" style="background:var(--c2)"></i>Hoy según la pestaña Patrimonio</span></div>
+      <div class="chart"><canvas id="cHip"></canvas></div>
+    </div>
+    <div class="card mt">
+      <h2>Simulador de venta</h2><p class="sub" id="ventaSub"></p>
+      <div class="form">
+        <label class="f">Precio de venta €<input type="number" id="vPrecio"></label>
+        <label class="f">Gastos de venta % (inmobiliaria, notaría…)<input type="number" id="vGastos" value="4" step="0.5"></label>
+        <label class="f">Plusvalía municipal €<input type="number" id="vPlusv" value="0"></label>
+        <label class="f">Amortización fiscal ya deducida en la renta €<input type="number" id="vAmortF" value="0"></label>
+      </div>
+      <div class="grid g6" id="ventaKpis"></div>
+      <div class="tw mt"><table id="tVenta"></table></div>
+      <p class="note">Estimación orientativa. IRPF de la base del ahorro (19 % – 30 %) calculado por propietario según el % de propiedad. La amortización del inmueble que hayáis deducido en la renta por el alquiler aumenta la ganancia: pon aquí la suma para que el cálculo sea correcto.</p>
+    </div>
+  </section>
+
+  <!-- BANCO -->
+  <section class="tab" id="t-banco">
+    <div class="card">
+      <div class="card-h"><div><h2>Resumen para el banco</h2>
+        <p class="sub">Lo que mira un banco para conceder una hipoteca o un préstamo. Abajo, la hoja tal cual saldrá en el PDF (una página A4). Los datos personales salen de «Situación financiera» y la antigüedad laboral, de Datos → Titulares.</p></div>
+        <button class="btn pri" id="btnPdf">⇩ Exportar PDF</button></div>
+      <h3>Capacidad de endeudamiento (solo en pantalla, no sale en el PDF)</h3>
+      <div class="form">
+        <label class="f">Tasa de esfuerzo máxima %<input type="number" id="bkMax" value="35" step="1"></label>
+        <label class="f">Tipo de interés %<input type="number" id="bkTipo" value="3" step="0.1"></label>
+        <label class="f">Plazo (años)<input type="number" id="bkPlazo" value="25"></label>
+        <label class="f">Entrada que aportaríais €<input type="number" id="bkEntrada" placeholder="opcional"></label>
+      </div>
+      <div class="grid g6" id="bkCap"></div>
+    </div>
+    <div class="hoja-wrap mt"><div id="hoja"></div></div>
+  </section>
+
+  <!-- OPERACIONES -->
+  <section class="tab" id="t-ops">
+    <div class="card">
+      <div class="card-h"><div><h2>Aportaciones</h2><p class="sub">Dinero aportado por periodo y activo</p></div><div class="seg" id="aggSeg"></div></div>
+      <div class="legend" id="opsLegend"></div>
+      <div class="chart"><canvas id="cAport"></canvas></div>
+    </div>
+    <div class="card mt">
+      <div class="card-h"><div><h2>Todas las operaciones</h2><p class="sub" id="opsSub"></p></div>
+        <div class="controls"><select id="fFondo"></select><select id="fAnio"></select></div></div>
+      <div class="tw scroll"><table id="tOps"></table></div>
+    </div>
+  </section>
+
+  <!-- DATOS -->
+  <section class="tab" id="t-datos">
+    <div class="card">
+      <h2>Origen de los datos</h2>
+      <p class="sub">Los precios siempre se descargan de internet. Lo que eliges aquí es de dónde salen tus compras, patrimonio, objetivos y alquileres.</p>
+      <div class="seg" id="fuenteSeg"></div>
+      <div id="fuenteInfo" class="note"></div>
+      <div class="controls mt">
+        <button class="btn" id="btnImportar">⇩ Copiar todos los datos del Excel al dashboard</button>
+        <button class="btn" id="btnDescargar">Descargar copia de seguridad (JSON)</button>
+      </div>
+      <p class="note">Los datos del dashboard se guardan en <b>Dashboard\datos.json</b> (dentro de tu OneDrive). Cada vez que guardas, la versión anterior queda en <b>Dashboard\copias</b> (últimas 3).</p>
+      <div class="lock mt" id="edLock"></div>
+    </div>
+
+    <div class="card mt">
+      <h2>Versión web (con contraseña)</h2>
+      <p class="sub">Copia de solo lectura en GitHub Pages para verla desde cualquier dispositivo. Los datos se suben <b>cifrados</b> (AES-256) y solo se descifran en el navegador con la contraseña. Se actualiza sola mientras este programa está abierto (al arrancar, cada 30 minutos y al guardar cambios).</p>
+      <div id="webEstado" class="note" style="margin:0 0 12px"></div>
+      <div class="form">
+        <label class="f">Contraseña nueva (mín. 12; mejor 4-5 palabras)<input type="password" id="webClave1" autocomplete="new-password"></label>
+        <label class="f">Repetir contraseña<input type="password" id="webClave2" autocomplete="new-password"></label>
+        <button class="btn" id="webGuardarClave">Guardar contraseña</button>
+      </div>
+      <div class="controls">
+        <button class="btn pri" id="webPublicar">Publicar ahora</button>
+        <button class="btn" id="webVista">Ver la web en este PC (sin subir)</button>
+        <label style="font-size:13px;display:flex;gap:6px;align-items:center"><input type="checkbox" id="webActiva"> Actualizar la web automáticamente</label>
+        <label style="font-size:13px;display:flex;gap:6px;align-items:center"><input type="checkbox" id="webAuto"> Arrancar este programa al encender Windows (sin ventana)</label>
+      </div>
+      <p class="note">La contraseña no se guarda: en este PC solo queda una clave derivada, fuera de OneDrive. Si la olvidas, pon una nueva aquí y vuelve a publicar. Si cambias la contraseña, los dispositivos que la recordaban la pedirán otra vez.</p>
+    </div>
+
+    <div class="card mt">
+      <h2>Titulares (para el banco)</h2>
+      <p class="sub" id="edPerSub"></p>
+      <div class="tw"><table class="ed" id="edPer"></table></div>
+      <div class="controls mt" id="edPerBtns"><button class="btn sm" id="addPer">+ Añadir titular</button>
+        <button class="btn sm" id="impPer">⇩ Copiar titulares y documentación del Excel</button></div>
+      <h3>Documentación disponible</h3>
+      <textarea id="edDoc" rows="4" style="width:100%;max-width:520px" placeholder="Un documento por línea"></textarea>
+      <p class="note">Estos datos personales solo se usan en la pestaña Banco de este PC. Nunca se incluyen en la versión web.</p>
+    </div>
+
+    <div class="card mt">
+      <h2>Fondos y titulares</h2>
+      <p class="sub">El símbolo es el código con el que se descarga el precio. «Buscar» lo encuentra a partir del ISIN. Titulares separados por comas: cada titular tiene la totalidad de las operaciones de ese fondo.</p>
+      <div class="tw"><table class="ed" id="edFondos"></table></div>
+      <div class="controls mt"><button class="btn sm" id="addFondo">+ Añadir fondo</button></div>
+      <div id="resIsin" class="res-isin"></div>
+      <h3>Grupos</h3>
+      <p class="sub">Una línea por grupo: «Nombre: persona, persona». El primer grupo tiene su propia pestaña.</p>
+      <textarea id="edGrupos" rows="2" style="width:100%;max-width:520px"></textarea>
+    </div>
+
+    <div id="edPropio">
+      <div class="card mt">
+        <h2>Operaciones</h2>
+        <p class="sub">Importe negativo = venta o reembolso. El precio se rellena con el cierre de ese día y las participaciones con importe / precio; corrígelos con los de tu extracto si quieres exactitud.</p>
+        <div class="form" id="opForm">
+          <label class="f">Fecha<input type="date" id="opF"></label>
+          <label class="f">Fondo<select id="opFo"></select></label>
+          <label class="f">Importe €<input type="number" step="0.01" id="opI"></label>
+          <label class="f">Precio participación<input type="number" step="0.0001" id="opP"></label>
+          <label class="f">Participaciones<input type="number" step="0.000001" id="opU"></label>
+          <button class="btn pri" id="opAdd">+ Añadir operación</button>
+        </div>
+        <div class="tw scroll"><table class="ed" id="edOps"></table></div>
+      </div>
+      <div class="card mt">
+        <h2>Patrimonio</h2>
+        <h3>Inmuebles</h3>
+        <div class="tw"><table class="ed" id="edInm"></table></div>
+        <div class="controls mt"><button class="btn sm" id="addInm">+ Añadir inmueble</button></div>
+        <div class="grid g2">
+          <div><h3>Liquidez por entidad</h3><table class="ed" id="edLiq"></table><div class="controls mt"><button class="btn sm" id="addLiq">+ Añadir cuenta</button></div></div>
+          <div><h3>Otros activos (sin fondos ni liquidez)</h3><table class="ed" id="edOtros"></table><div class="controls mt"><button class="btn sm" id="addOtro">+ Añadir activo</button></div></div>
+        </div>
+        <h3>Ingresos y deudas personales</h3>
+        <div class="form">
+          <label class="f">Nóminas netas €/mes<input type="number" id="edNom"></label>
+          <label class="f">Otros ingresos €/mes<input type="number" id="edOtrI"></label>
+          <label class="f">Préstamos personales pendientes €<input type="number" id="edPas"></label>
+        </div>
+      </div>
+      <div class="card mt">
+        <h2>Histórico de alquileres</h2>
+        <div class="tw scroll"><table class="ed" id="edAlq"></table></div>
+        <div class="controls mt"><button class="btn sm" id="addAlq">+ Añadir año</button></div>
+      </div>
+      <div class="card mt">
+        <h2>Objetivos</h2>
+        <p class="sub">Plan año a año. «Generar plan» lo calcula con capital inicial, aportación anual y rentabilidad.</p>
+        <div id="edObj"></div>
+        <div class="controls mt"><button class="btn sm" id="addObj">+ Añadir objetivo</button></div>
+      </div>
+    </div>
+    <div class="card mt">
+      <h2>Pisos de inversión</h2>
+      <p class="sub" id="edPisosSub"></p>
+      <div id="edPisos"></div>
+      <div class="controls mt"><button class="btn sm" id="addPiso">+ Añadir piso</button></div>
+    </div>
+  </section>
+</main>
+
+<div class="savebar" id="savebar"><span>Tienes cambios sin guardar</span><button class="btn" id="btnDescartar">Descartar</button><button class="btn pri" id="btnGuardar">Guardar</button></div>
+
+<script>
+"use strict";
+// true en la copia publicada en la web (la genera servidor.py): datos cifrados, solo lectura
+const MODO_WEB = true;
+const VERSION_WEB = "9be70c4e62f2"; /* huella de esta página publicada: si datos.enc.json trae otra, el navegador tenía una copia vieja */// ============================================================ estado y utilidades
+const store = {get(k,d){try{const v=localStorage.getItem("dash_"+k);return v===null?d:JSON.parse(v)}catch(e){return d}},
+               set(k,v){try{localStorage.setItem("dash_"+k,JSON.stringify(v))}catch(e){}}};
+const state = {scope: store.get("scope","Todos"), tab: "resumen" /* siempre se abre en Resumen */, range: "Todo", fund: null, agg: "Año", acSel: "Cartera"};
+let D = null, E = null;            // datos recibidos y motor calculado
+let P = null, dirty = false;       // datos propios en edición
+let FONDOS = [], TIT = {}, PERSONAS = [], GRUPOS = {}, SCOPES = {};
+const SLOTS = ["--c1","--c2","--c3","--c4","--c5","--c6","--c7","--c8"];
+const PCOL = ["--c7","--c6","--c5","--c4","--c3"]; // sin rojo: se confundiría con pérdidas
+const charts = {};
+
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const col = f => css(SLOTS[Math.max(0,FONDOS.indexOf(f))%8]);
+const pcol = p => css(PCOL[Math.max(0,PERSONAS.indexOf(p))%PCOL.length]);
+const nf0 = new Intl.NumberFormat("es-ES",{maximumFractionDigits:0,useGrouping:"always"});
+const nf2 = new Intl.NumberFormat("es-ES",{minimumFractionDigits:2,maximumFractionDigits:2,useGrouping:"always"});
+const eur = (v,d=0) => { if(v==null||isNaN(v)) return "–"; if(Math.abs(v)<(d?0.005:0.5)) v=0; return (d? nf2.format(v): nf0.format(v)) + " €"; };
+const eurS = v => { if(v==null||isNaN(v)) return "–"; v=Math.round(v); return (v>0?"+":"") + nf0.format(v===0?0:v) + " €"; };
+const pct = (v,d=1) => v==null||!isFinite(v) ? "–" : (v*100).toFixed(d).replace(".",",") + " %";
+const pctS = (v,d=1) => v==null||!isFinite(v) ? "–" : (v>0?"+":"") + pct(v,d);
+const cls = v => v>0?"up":v<0?"down":"";
+const arrow = v => v>0?"▲":v<0?"▼":"";
+const $ = id => document.getElementById(id);
+const esc = s => String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const dayMs = 864e5;
+const iso = d => d.toISOString().slice(0,10);
+const toD = s => new Date(s+"T00:00:00Z");
+const yearsBetween = (a,b) => (toD(b)-toD(a))/dayMs/365.25;
+const fmtDate = s => s ? s.slice(8,10)+"/"+s.slice(5,7)+"/"+s.slice(0,4) : "–";
+const MESES = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
+const titTxt = f => (TIT[f]||[]).join(" y ") || "—";
+const kpiCard = k => `<div class="card kpi"><div class="lbl">${k[0]}</div><div class="val">${k[1]}</div><div class="det">${k[2]||""}</div></div>`;
+
+function xirr(flows){ // [{d, v}] aportación negativa, valor final positivo
+  flows = flows.filter(f=>f.v);
+  if(flows.length<2) return null;
+  const t0 = toD(flows[0].d), ts = flows.map(f=>(toD(f.d)-t0)/dayMs/365);
+  const npv = r => flows.reduce((s,f,i)=>s+f.v/Math.pow(1+r,ts[i]),0);
+  let lo=-0.99, hi=10, flo=npv(lo);
+  if(flo*npv(hi)>0) return null;
+  for(let i=0;i<200;i++){ const m=(lo+hi)/2, fm=npv(m); if(Math.abs(fm)<1e-7) return m; if(flo*fm<0){hi=m}else{lo=m;flo=fm} }
+  return (lo+hi)/2;
+}
+const mean = a => a.reduce((s,x)=>s+x,0)/a.length;
+const std = a => { const m=mean(a); return Math.sqrt(a.reduce((s,x)=>s+(x-m)**2,0)/(a.length-1)); };
+
+// ============================================================ titulares y ámbitos
+// Cada titular tiene la TOTALIDAD de las operaciones del fondo: el peso de un fondo en un
+// ámbito es cuántos titulares del ámbito lo tienen (en Todos, un fondo de dos titulares cuenta ×2).
+function configurar(){
+  FONDOS = Object.keys(D.fondos);
+  TIT = Object.fromEntries(FONDOS.map(f=>[f, D.fondos[f].titulares||[]]));
+  PERSONAS = [...new Set(FONDOS.flatMap(f=>TIT[f]))];
+  GRUPOS = D.grupos||{};
+  const pesos = ps => Object.fromEntries(FONDOS.map(f=>[f, TIT[f].filter(t=>ps.includes(t)).length]).filter(x=>x[1]>0));
+  SCOPES = {"Todos": Object.fromEntries(FONDOS.map(f=>[f, Math.max(1,TIT[f].length)]))};
+  for(const p of PERSONAS) SCOPES[p] = pesos([p]);
+  for(const g in GRUPOS) SCOPES[g] = pesos(GRUPOS[g]);
+  if(!SCOPES[state.scope]) state.scope = "Todos";
+  if(!FONDOS.includes(state.fund)) state.fund = FONDOS[0];
+  const g0 = Object.keys(GRUPOS)[0];
+  $("tabGrupo").style.display = g0 ? "" : "none"; $("tabGrupo").textContent = g0 || "";
+}
+const xN = k => k>1 ? ` <span class="chip" title="Cuenta ${k} carteras idénticas">×${k}</span>` : "";
+
+// ============================================================ motor
+function motor(datos){
+  const ops = datos.operaciones.filter(o=>FONDOS.includes(o.fondo) && o.fecha).slice().sort((a,b)=>a.fecha<b.fecha?-1:1);
+  const hoy = iso(new Date());
+  const start = ops.length ? ops[0].fecha : hoy;
+  const days = [];
+  for(let t=toD(start); iso(t)<=hoy; t=new Date(+t+dayMs)) days.push(iso(t));
+  const N = days.length, idx = Object.fromEntries(days.map((d,i)=>[d,i]));
+  const ff = (hist, fallback) => { // precio con el último cierre conocido para cada día
+    const keys = Object.keys(hist||{}).sort(), out = new Float64Array(N);
+    let p = fallback||0, k = 0;
+    for(let i=0;i<N;i++){ while(k<keys.length && keys[k]<=days[i]){p=hist[keys[k]];k++} out[i]=p; }
+    return out;
+  };
+  const F = {};
+  for(const f of FONDOS){
+    const info = datos.fondos[f]||{}, fops = ops.filter(o=>o.fondo===f);
+    const price = ff(info.hist, fops.length? fops[0].precio : 0);
+    const units = new Float64Array(N), inv = new Float64Array(N), flow = new Float64Array(N), value = new Float64Array(N);
+    for(const o of fops) flow[idx[o.fecha]] += o.importe;
+    let u=0, c=0, j=0;
+    for(let i=0;i<N;i++){
+      while(j<fops.length && fops[j].fecha<=days[i]){u+=fops[j].part;c+=fops[j].importe;j++}
+      units[i]=u; inv[i]=c; value[i]=u*price[i];
+    }
+    const hk = Object.keys(info.hist||{}).sort();
+    const pLast = info.precio ?? price[N-1], pPrev = hk.length>1 ? info.hist[hk[hk.length-2]] : pLast;
+    F[f] = {info, ops:fops, price, units, inv, flow, value, pLast, pPrev, first: fops.length? fops[0].fecha : null};
+  }
+  const bench = ff(datos.benchmark?.hist, 1);
+  return {days, N, idx, F, bench, ops, hoy};
+}
+
+function serie(w){ // w: {fondo: peso}
+  const N = E.N, V = new Float64Array(N), CF = new Float64Array(N), INV = new Float64Array(N);
+  for(const f in w){ const x=E.F[f], k=w[f]; if(!x) continue; for(let i=0;i<N;i++){V[i]+=k*x.value[i];CF[i]+=k*x.flow[i];INV[i]+=k*x.inv[i]} }
+  let first=-1; for(let i=0;i<N;i++) if(CF[i]!==0){first=i;break}
+  const TW = new Float64Array(N); // índice sin efecto de aportaciones: solo para la caída desde máximos
+  for(let i=0;i<N;i++){ if(i<=first||first<0){TW[i]=1;continue} const prev=V[i-1]; TW[i]=TW[i-1]*(prev>0?(V[i]-CF[i])/prev:1); }
+  return {V,CF,INV,TW,first,w};
+}
+
+// Rentabilidad conseguida en un periodo (Dietz modificado): beneficio / capital medio invertido
+function dietz(s, iS, iE){
+  const vS = iS>=0 ? s.V[iS] : 0, T = iE-iS; let cf=0, wcf=0;
+  for(let i=iS+1;i<=iE;i++) if(s.CF[i]){ cf+=s.CF[i]; wcf+=s.CF[i]*(iE-i)/T; }
+  const gain = s.V[iE]-vS-cf, den = vS+wcf;
+  return {gain, r: den>1e-6 ? gain/den : null, vS, vE:s.V[iE], cf, activo: vS>0.01 || cf!==0};
+}
+
+function metricas(s){
+  const N=E.N, L=N-1, days=E.days;
+  if(s.first<0) return {tir:null,anual:[],mret:[],rets:[],valor:0,aportado:0,beneficio:0,maxDD:0,DD:new Float64Array(N),ytd:{gain:0,r:null}};
+  const flows=[]; for(let i=0;i<N;i++) if(s.CF[i]) flows.push({d:days[i],v:-s.CF[i]});
+  flows.push({d:days[L],v:s.V[L]});
+  const tir = xirr(flows);
+  // por año y por mes
+  const finDe = (fn) => { const ends=[]; for(let i=0;i<N;i++) if(i===L || fn(days[i])!==fn(days[i+1])) ends.push(i); return ends; };
+  const periodos = ends => { const out=[]; let prev=-1; for(const i of ends){ const p=dietz(s,prev,i); if(p.activo) out.push({i,...p}); prev=i; } return out; };
+  const anual = periodos(finDe(d=>d.slice(0,4))).map(p=>({...p, y:+days[p.i].slice(0,4)}));
+  const mret = periodos(finDe(d=>d.slice(0,7))).filter(p=>p.r!=null).map(p=>({...p, m:days[p.i].slice(0,7)}));
+  // caída desde máximos (de la cartera, sin efecto de aportaciones)
+  let peak=0, maxDD=0, ddDate=null; const DD=new Float64Array(N);
+  for(let i=s.first;i<N;i++){ peak=Math.max(peak,s.TW[i]); DD[i]=s.TW[i]/peak-1; if(DD[i]<maxDD){maxDD=DD[i];ddDate=days[i]} }
+  const rets = mret.map(m=>m.r);
+  const y0 = new Date().getFullYear();
+  return {tir, anual, mret, rets, maxDD, ddDate, DD,
+          ytd: anual.find(a=>a.y===y0) || {gain:0,r:null},
+          vol: rets.length>2? std(rets)*Math.sqrt(12):null,
+          best: rets.length? Math.max(...rets):null, worst: rets.length? Math.min(...rets):null,
+          posPct: rets.length? rets.filter(r=>r>0).length/rets.length:null,
+          yrs: (L-s.first)/365.25,
+          valor:s.V[L], aportado:s.INV[L], beneficio:s.V[L]-s.INV[L]};
+}
+function varDia(w){ let v=0, base=0; for(const f in w){const x=E.F[f]; v+=w[f]*x.units[E.N-1]*(x.pLast-x.pPrev); base+=w[f]*x.units[E.N-1]*x.pPrev;} return {v, p: base? v/base:0}; }
+function aportMes(w, meses=12){
+  const desde = iso(new Date(Date.now()-meses*30.44*dayMs)); let s=0;
+  for(const o of E.ops) if(o.fecha>=desde && w[o.fondo]) s+=w[o.fondo]*o.importe;
+  return s/meses;
+}
+function precioEn(f, fecha){
+  const h = D.fondos[f]?.hist || {}; let best=null;
+  for(const k in h) if(k<=fecha && (!best||k>best)) best=k;
+  return best ? h[best] : null;
+}
+
+// ============================================================ gráficos
+function setupChartDefaults(){
+  Chart.defaults.font.family = getComputedStyle(document.body).fontFamily;
+  Chart.defaults.font.size = 12;
+  Chart.defaults.color = css("--text-2");
+  Chart.defaults.borderColor = css("--grid");
+  Chart.defaults.maintainAspectRatio = false;
+  // Solo la duración: sustituir el objeto entero borra cómo se animan los colores y rompe todas las gráficas
+  Chart.defaults.animation.duration = 250;
+  Chart.defaults.plugins.legend.display = false;
+  const tt = Chart.defaults.plugins.tooltip;
+  tt.backgroundColor = css("--surface"); tt.titleColor = css("--text"); tt.bodyColor = css("--text-2");
+  tt.borderColor = css("--border"); tt.borderWidth = 1; tt.padding = 10; tt.boxPadding = 4; tt.usePointStyle = true;
+  tt.titleFont = {weight:"600"};
+  Chart.defaults.elements.line.borderWidth = 2;
+  Chart.defaults.elements.point.radius = 0;
+  Chart.defaults.elements.point.hoverRadius = 5;
+  Chart.defaults.elements.bar.borderRadius = 4;
+}
+function mk(id, cfg){ if(charts[id]) charts[id].destroy(); charts[id] = new Chart($(id), cfg); return charts[id]; }
+const axisEur = {ticks:{callback:v=>nf0.format(v)+" €"}, grid:{color:()=>css("--grid")}, border:{display:false}};
+const axisPct = {ticks:{callback:v=>(v*100).toFixed(0)+" %"}, grid:{color:()=>css("--grid")}, border:{display:false}};
+const timeX = () => ({type:"time", time:{tooltipFormat:"dd/MM/yyyy"}, grid:{display:false}, border:{color:()=>css("--border")}, ticks:{maxTicksLimit:8}});
+const hover = {mode:"index", intersect:false};
+const step = (arr, every) => arr.filter((_,i)=>i%every===0||i===arr.length-1);
+const rango = (a,b) => { const o=[]; for(let i=a;i<b;i++) o.push(i); return o; };
+function alpha(hex,a){ const h=hex.replace("#",""); const n=parseInt(h.length===3?h.split("").map(c=>c+c).join(""):h,16); return `rgba(${n>>16&255},${n>>8&255},${n&255},${a})`; }
+function heatBg(r, cap=0.08){
+  if(r==null) return "";
+  return `background:${alpha(css(r>=0?"--pos":"--neg"), Math.min(Math.abs(r)/cap,1)*0.55+0.06)}`;
+}
+
+// ============================================================ resumen
+function renderResumen(){
+  const w = SCOPES[state.scope], s = serie(w), m = metricas(s), vd = varDia(w);
+  if(s.first<0){ $("kpis").innerHTML = `<div class="card">No hay operaciones para «${esc(state.scope)}».</div>`; return; }
+  const nOps = E.ops.filter(o=>w[o.fondo]).length;
+  $("kpis").innerHTML = [
+    ["Valor actual", eur(m.valor), `<span class="${cls(vd.v)}">${arrow(vd.v)} ${eurS(vd.v)} (${pctS(vd.p,2)}) último cierre</span>`],
+    ["Aportado neto", eur(m.aportado), `${nOps} operaciones desde ${fmtDate(E.days[s.first])}`],
+    ["Beneficio", `<span class="${cls(m.beneficio)}">${eurS(m.beneficio)}</span>`, `${pctS(m.beneficio/m.aportado)} sobre lo aportado`],
+    ["TIR anual (tu rentabilidad)", `<span class="${cls(m.tir)}">${pctS(m.tir)}</span>`, `Como un % TAE, en ${m.yrs.toFixed(1).replace(".",",")} años`],
+    [`Este año (${new Date().getFullYear()})`, `<span class="${cls(m.ytd.r)}">${pctS(m.ytd.r)}</span>`, `<span class="${cls(m.ytd.gain)}">${eurS(m.ytd.gain)}</span> de beneficio en el año`],
+    ["Máxima caída", `<span class="down">${pct(m.maxDD)}</span>`, m.ddDate? "Peor momento: "+fmtDate(m.ddDate):""],
+  ].map(kpiCard).join("");
+
+  $("owners").innerHTML = PERSONAS.map(n=>{
+    const wp = SCOPES[n], mm = metricas(serie(wp)), dd = varDia(wp);
+    const desc = Object.keys(wp).join(" · ");
+    return `<div class="card owner"><div class="name"><i class="dot" style="background:${pcol(n)}"></i>${esc(n)} <span class="chip">${esc(desc)}</span></div>
+      <div class="row"><span>Valor</span><b>${eur(mm.valor)}</b></div>
+      <div class="row"><span>Aportado</span><span>${eur(mm.aportado)}</span></div>
+      <div class="row"><span>Beneficio</span><span class="${cls(mm.beneficio)}">${eurS(mm.beneficio)} · ${pctS(mm.beneficio/mm.aportado)}</span></div>
+      <div class="row"><span>TIR anual</span><span class="${cls(mm.tir)}">${pctS(mm.tir)}</span></div>
+      <div class="row"><span>Este año</span><span class="${cls(mm.ytd.r)}">${pctS(mm.ytd.r)} · ${eurS(mm.ytd.gain)}</span></div>
+      <div class="row"><span>Último cierre</span><span class="${cls(dd.v)}">${eurS(dd.v)}</span></div>
+      <div class="row" style="border:0"><span>Aportación media últimos 12 meses</span><span>${eur(aportMes(wp))}/mes</span></div></div>`;
+  }).join("");
+
+  const r0 = {"6M":182,"1A":365,"3A":1095}[state.range];
+  const i0 = Math.max(r0? E.N-1-r0 : 0, s.first);
+  const P = step(rango(i0,E.N), (E.N-i0)>900 ? 3 : 1);
+  $("evoSub").textContent = `${state.scope} · ${fmtDate(E.days[i0])} – hoy`;
+  mk("cEvo",{type:"line",data:{datasets:[
+    {label:"Valor de mercado", data:P.map(i=>({x:E.days[i],y:s.V[i]})), borderColor:css("--accent"), backgroundColor:alpha(css("--accent"),.10), fill:true},
+    {label:"Aportado neto", data:P.map(i=>({x:E.days[i],y:s.INV[i]})), borderColor:css("--neutral"), stepped:true, borderWidth:1.5},
+  ]},options:{interaction:hover, scales:{x:timeX(), y:axisEur},
+    plugins:{tooltip:{callbacks:{label:c=>` ${c.dataset.label}: ${eur(c.parsed.y)}`, afterBody:it=>{if(!it.length) return "";const i=P[it[0].dataIndex];const g=s.V[i]-s.INV[i];return `Beneficio: ${eurS(g)} (${pctS(g/s.INV[i])})`}}}}}});
+
+  const fs = FONDOS.filter(f=>w[f] && E.F[f].units[E.N-1]);
+  const vals = fs.map(f=>w[f]*E.F[f].value[E.N-1]), tot = vals.reduce((a,b)=>a+b,0);
+  mk("cDonut",{type:"doughnut",data:{labels:fs,datasets:[{data:vals,backgroundColor:fs.map(col),borderColor:css("--surface"),borderWidth:2,borderRadius:4}]},
+    options:{cutout:"68%",plugins:{tooltip:{callbacks:{label:c=>` ${c.label}: ${eur(c.parsed)} (${pct(c.parsed/tot)})`}}}}});
+  $("donutLegend").innerHTML = fs.map((f,k)=>`<div class="row"><span><i class="dot" style="background:${col(f)}"></i>${esc(f)}</span><span>${eur(vals[k])} · <b>${pct(vals[k]/tot)}</b></span></div>`).join("");
+
+  let h = `<tr><th>Activo</th><th class="l">Titular</th><th>Particip.</th><th>Coste medio</th><th>Precio hoy</th><th>Var. día</th><th>Aportado</th><th>Valor</th><th>Beneficio</th><th>Rentab.</th><th>TIR anual</th><th>Peso</th></tr>`;
+  const T={a:0,v:0,d:0};
+  for(const f of fs){
+    const x=E.F[f], k=w[f], u=x.units[E.N-1]*k, a=x.inv[E.N-1]*k, v=x.value[E.N-1]*k, d=u*(x.pLast-x.pPrev);
+    const mm = metricas(serie({[f]:1}));
+    T.a+=a;T.v+=v;T.d+=d;
+    const live = x.info.en_vivo ? "" : ` <span class="chip" title="Sin conexión: último precio guardado">guardado</span>`;
+    h += `<tr><td><i class="dot" style="background:${col(f)}"></i>${esc(f)}</td><td class="l">${esc(titTxt(f))}${xN(k)}</td>
+      <td>${nf2.format(u)}</td><td>${nf2.format(a/u)} €</td><td title="Cotización ${esc(x.info.hora||"")}">${nf2.format(x.pLast)} €${live}</td>
+      <td class="${cls(x.pLast-x.pPrev)}">${pctS(x.pLast/x.pPrev-1,2)}</td>
+      <td>${eur(a)}</td><td><b>${eur(v)}</b></td><td class="${cls(v-a)}">${eurS(v-a)}</td><td class="${cls(v-a)}">${pctS((v-a)/a)}</td>
+      <td class="${cls(mm.tir)}">${pctS(mm.tir)}</td><td>${pct(v/tot)}</td></tr>`;
+  }
+  h += `<tr class="tot"><td>Total</td><td></td><td></td><td></td><td></td><td class="${cls(T.d)}">${eurS(T.d)}</td><td>${eur(T.a)}</td><td>${eur(T.v)}</td><td class="${cls(T.v-T.a)}">${eurS(T.v-T.a)}</td><td class="${cls(T.v-T.a)}">${pctS((T.v-T.a)/T.a)}</td><td class="${cls(m.tir)}">${pctS(m.tir)}</td><td>100 %</td></tr>`;
+  $("tPos").innerHTML = h;
+}
+
+// ============================================================ rentabilidad
+function renderRentab(){
+  const w = SCOPES[state.scope], fs = FONDOS.filter(f=>w[f]);
+  const M = {}; for(const f of fs) M[f]=metricas(serie({[f]:w[f]}));
+  const sc = serie(w), MC = metricas(sc);
+  if(sc.first<0) return;
+  const years = MC.anual.map(a=>a.y), y0 = new Date().getFullYear();
+  const cell = a => a && a.r!=null ? `<td style="${heatBg(a.r,0.25)}"><b>${pctS(a.r)}</b><br><span style="color:var(--text-3);font-size:11px">${eurS(a.gain)}</span></td>` : `<td style="color:var(--text-3)">–</td>`;
+  let h = `<tr><th>Año</th>${fs.map(f=>`<th><i class="dot" style="background:${col(f)}"></i>${esc(f)}${xN(w[f])}</th>`).join("")}<th>Cartera ${esc(state.scope)}</th></tr>`;
+  for(const y of years) h += `<tr><td>${y}${y===y0?" <span class='chip'>en curso</span>":""}</td>${fs.map(f=>cell(M[f].anual.find(a=>a.y===y))).join("")}${cell(MC.anual.find(a=>a.y===y))}</tr>`;
+  h += `<tr class="tot"><td>Acumulada</td>${fs.map(f=>`<td class="${cls(M[f].beneficio)}">${pctS(M[f].beneficio/M[f].aportado)}</td>`).join("")}<td class="${cls(MC.beneficio)}">${pctS(MC.beneficio/MC.aportado)}</td></tr>`;
+  h += `<tr class="tot"><td>TIR anual</td>${fs.map(f=>`<td class="${cls(M[f].tir)}">${pctS(M[f].tir)}</td>`).join("")}<td class="${cls(MC.tir)}">${pctS(MC.tir)}</td></tr>`;
+  $("tAnual").innerHTML = h;
+
+  const an = MC.anual;
+  $("gainSub").textContent = `Cartera ${state.scope} · total ${eurS(an.reduce((s,a)=>s+a.gain,0))}`;
+  mk("cGainYear",{type:"bar",data:{labels:an.map(a=>a.y),datasets:[{data:an.map(a=>a.gain),backgroundColor:an.map(a=>css(a.gain>=0?"--pos":"--neg")),maxBarThickness:46}]},
+    options:{scales:{x:{grid:{display:false}},y:axisEur},plugins:{tooltip:{callbacks:{label:c=>{const a=an[c.dataIndex];return [` Beneficio: ${eurS(a.gain)} (${pctS(a.r)})`,` Aportado en el año: ${eur(a.cf)}`,` Valor a cierre: ${eur(a.vE)}`]}}}}}});
+
+  // selector: cartera completa o un activo concreto
+  if(state.acSel!=="Cartera" && !fs.includes(state.acSel)) state.acSel = "Cartera";
+  $("acSeg").innerHTML = ["Cartera",...fs].map(k=>`<button data-k="${esc(k)}" class="${k===state.acSel?"on":""}">${k==="Cartera"?"Toda la cartera":`<i class="dot" style="background:${col(k)}"></i>${esc(k)}`}</button>`).join("");
+  $("acSeg").querySelectorAll("button").forEach(b=>b.onclick=()=>{state.acSel=b.dataset.k;renderRentab()});
+  const sa = state.acSel==="Cartera" ? sc : serie({[state.acSel]:w[state.acSel]}), ma = state.acSel==="Cartera" ? MC : M[state.acSel];
+  const ca = state.acSel==="Cartera" ? css("--accent") : col(state.acSel);
+  const P = step(rango(sa.first,E.N), 2);
+  $("acSub").textContent = `${state.acSel==="Cartera"?"Cartera "+state.scope:state.acSel} · beneficio / aportado en cada momento · hoy ${pctS(ma.beneficio/ma.aportado)} (${eurS(ma.beneficio)})`;
+  mk("cAcum",{type:"line",data:{datasets:[{data:P.map(i=>({x:E.days[i],y:sa.INV[i]>0?(sa.V[i]-sa.INV[i])/sa.INV[i]:0})),borderColor:ca,backgroundColor:alpha(ca,.10),fill:"origin"}]},
+    options:{interaction:hover,scales:{x:timeX(),y:axisPct},plugins:{tooltip:{callbacks:{label:c=>{const i=P[c.dataIndex];return [` Rentabilidad acumulada: ${pctS(c.parsed.y)}`,` Beneficio: ${eurS(sa.V[i]-sa.INV[i])}`,` Aportado: ${eur(sa.INV[i])}`]}}}}}});
+
+  $("idxLegend").innerHTML = fs.map(f=>`<span><i class="dot" style="background:${col(f)}"></i>${esc(f)} ${pctS(M[f].beneficio/M[f].aportado)}</span>`).join("");
+  mk("cIdx",{type:"line",data:{datasets:fs.map(f=>{ const x=E.F[f], i0=E.idx[x.first];
+      return {label:f,data:step(rango(i0,E.N),2).map(i=>({x:E.days[i],y:x.inv[i]>0?(x.value[i]-x.inv[i])/x.inv[i]:0})),borderColor:col(f)}; })},
+    options:{interaction:hover,scales:{x:timeX(),y:axisPct},plugins:{tooltip:{callbacks:{label:c=>` ${c.dataset.label}: ${pctS(c.parsed.y)}`}}}}});
+
+  $("heatSub").textContent = `Cartera ${state.scope} · ${pct(MC.posPct,0)} de los meses en positivo · mejor mes ${pctS(MC.best)} · peor mes ${pctS(MC.worst)}`;
+  const byY = {}; for(const r of MC.mret){ const [y,mm]=r.m.split("-"); (byY[y]=byY[y]||{})[+mm-1]=r; }
+  let hm = `<tr><th>Año</th>${MESES.map(m=>`<th style="text-align:center">${m}</th>`).join("")}<th style="text-align:center">Año</th></tr>`;
+  for(const y of Object.keys(byY).sort()){
+    const ya = MC.anual.find(a=>a.y==y);
+    hm += `<tr><td>${y}</td>${MESES.map((_,i)=>{const r=byY[y][i];return r==null?`<td></td>`:`<td style="${heatBg(r.r)}" title="${MESES[i]} ${y}: ${pctS(r.r,2)} · ${eurS(r.gain)}">${pctS(r.r)}</td>`}).join("")}<td style="${heatBg(ya?.r,0.25)}"><b>${pctS(ya?.r)}</b></td></tr>`;
+  }
+  $("tHeat").innerHTML = hm;
+
+  const rf = (+$("rf").value||0)/100;
+  const row = (n,c,mm) => `<td>${c?`<i class="dot" style="background:${c}"></i>`:""}${esc(n)}</td><td class="${cls(mm.tir)}">${pctS(mm.tir)}</td><td>${pct(mm.vol)}</td>
+    <td>${mm.vol&&mm.tir!=null? nf2.format((mm.tir-rf)/mm.vol):"–"}</td><td class="down">${pct(mm.maxDD)}</td><td class="up">${pctS(mm.best)}</td><td class="down">${pctS(mm.worst)}</td><td>${pct(mm.posPct,0)}</td><td>${mm.rets.length}</td>`;
+  $("tRisk").innerHTML = `<tr><th>Activo</th><th>TIR anual</th><th>Volatilidad anual</th><th>Sharpe</th><th>Máx. caída</th><th>Mejor mes</th><th>Peor mes</th><th>Meses +</th><th>Meses</th></tr>`
+    + fs.map(f=>`<tr>${row(f,col(f),M[f])}</tr>`).join("") + `<tr class="tot">${row("Cartera "+state.scope,null,MC)}</tr>`;
+}
+
+// ============================================================ fondos
+function renderFondos(){
+  $("fundSeg").innerHTML = FONDOS.map(f=>`<button data-f="${esc(f)}" class="${f===state.fund?"on":""}"><i class="dot" style="background:${col(f)}"></i>${esc(f)}</button>`).join("");
+  $("fundSeg").querySelectorAll("button").forEach(b=>b.onclick=()=>{state.fund=b.dataset.f;renderFondos()});
+  const f = state.fund, x = E.F[f], info = x.info, L = E.N-1;
+  if(!x.ops.length){ $("fundKpis").innerHTML = `<div class="card">Sin operaciones en ${esc(f)}.</div>`; return; }
+  const mm = metricas(serie({[f]:1}));
+  const u = x.units[L], a = x.inv[L], v = x.value[L], cm = a/u;
+  const hk = Object.keys(info.hist||{}).filter(k=>k>=x.first);
+  const maxP = hk.length ? Math.max(...hk.map(k=>info.hist[k])) : x.pLast;
+  const nTit = Math.max(1,TIT[f].length);
+  $("fundKpis").innerHTML = [
+    [`Valor${nTit>1?" (cada titular)":""}`, eur(v), `${nf2.format(u)} participaciones${nTit>1?` · ${eur(v*nTit)} entre los ${nTit}`:""}`],
+    ["Beneficio", `<span class="${cls(v-a)}">${eurS(v-a)}</span>`, `${pctS((v-a)/a)} sobre ${eur(a)}`],
+    ["TIR anual", `<span class="${cls(mm.tir)}">${pctS(mm.tir)}</span>`, `Desde ${fmtDate(x.first)}`],
+    ["Precio hoy", `${nf2.format(x.pLast)} €`, `<span class="${cls(x.pLast-x.pPrev)}">${pctS(x.pLast/x.pPrev-1,2)}</span> · cotización ${info.hora? fmtDate(info.hora.slice(0,10)):"–"}${info.en_vivo?"":" (guardada)"}`],
+    ["Tu coste medio", `${nf2.format(cm)} €`, `El precio está un ${pctS(x.pLast/cm-1)} ${x.pLast>=cm?"por encima":"por debajo"}`],
+    ["Vs. máximo desde tu compra", pctS(x.pLast/maxP-1), `Máximo ${nf2.format(maxP)} €`],
+  ].map(kpiCard).join("");
+  $("fundTitle").textContent = info.nombre || f;
+  $("fundSub").textContent = `${info.isin||""} · ${info.tipo||""} · titular: ${titTxt(f)} · precio de ${info.simbolo||"?"}${info.hist_aproximado?" · histórico aproximado a partir de BTC/EUR":""}`;
+  $("fundLegend").innerHTML = `<span><i class="dot" style="background:${col(f)}"></i>Precio</span><span><i class="dot" style="background:var(--text)"></i>Tus compras</span><span><i class="dot" style="background:var(--neutral)"></i>Tu coste medio</span>`;
+  const P = step(rango(Math.max(0,E.idx[x.first]-60),E.N), 2);
+  mk("cFund",{type:"line",data:{datasets:[
+    {label:"Precio",data:P.map(i=>({x:E.days[i],y:x.price[i]})),borderColor:col(f)},
+    {label:"Coste medio",data:P.map(i=>({x:E.days[i],y:x.units[i]? x.inv[i]/x.units[i] : null})),borderColor:css("--neutral"),borderWidth:1.5,stepped:true},
+    {type:"scatter",label:"Compra",data:x.ops.map(o=>({x:o.fecha,y:o.precio,o})),backgroundColor:css("--text"),borderColor:css("--surface"),borderWidth:2,pointRadius:c=>Math.max(4,Math.min(10,3+Math.sqrt(Math.abs(c.raw?.o?.importe||0))/6)),pointHoverRadius:8},
+  ]},options:{interaction:{mode:"nearest",intersect:false},scales:{x:timeX(),y:{grid:{color:()=>css("--grid")},border:{display:false},ticks:{callback:v=>nf2.format(v)+" €"}}},
+    plugins:{tooltip:{callbacks:{label:c=>c.dataset.type==="scatter"? ` Compra: ${eur(c.raw.o.importe,2)} a ${nf2.format(c.raw.o.precio)} €` : ` ${c.dataset.label}: ${nf2.format(c.parsed.y)} €`}}}}});
+  $("fundOpsSub").textContent = `Resultado de cada compra a precio de hoy${nTit>1?" · importes de cada titular (las "+nTit+" carteras son idénticas)":""}`;
+  let h = `<tr><th>Fecha</th><th>Importe</th><th>Precio compra</th><th>Particip.</th><th>Valor hoy</th><th>Beneficio</th><th>Rentab.</th><th>TIR anual</th><th>Días</th></tr>`;
+  for(const o of x.ops.slice().reverse()){
+    const vh = o.part*x.pLast, g = vh-o.importe, venta = o.importe<0, anos = yearsBetween(o.fecha,E.hoy);
+    const t = venta||anos<1 ? null : xirr([{d:o.fecha,v:-o.importe},{d:E.hoy,v:vh}]);
+    h += `<tr><td>${fmtDate(o.fecha)}${venta?" <span class='chip'>venta</span>":""}</td><td>${eur(o.importe,2)}</td><td>${nf2.format(o.precio)} €</td><td>${nf2.format(o.part)}</td><td>${eur(vh,2)}</td>
+      <td class="${cls(g)}">${venta?"–":eurS(g)}</td><td class="${cls(g)}">${venta?"–":pctS(g/o.importe)}</td><td class="${cls(t)}">${venta?"–":anos<1?"<span style='color:var(--text-3)'>&lt;1 año</span>":pctS(t)}</td><td>${Math.round(anos*365.25)}</td></tr>`;
+  }
+  $("tFundOps").innerHTML = h;
+}
+
+// ============================================================ grupo (niñas)
+function renderGrupo(){
+  const g = Object.keys(GRUPOS)[0]; if(!g) return;
+  const miembros = GRUPOS[g].filter(p=>SCOPES[p]);
+  $("grupoCards").innerHTML = miembros.map(n=>{
+    const w = SCOPES[n], m = metricas(serie(w));
+    return `<div class="card"><div class="card-h"><h2 style="font-size:16px"><i class="dot" style="background:${pcol(n)}"></i>${esc(n)}</h2><span class="chip">${esc(Object.keys(w).join(" + "))}</span></div>
+    <div class="grid mt" style="grid-template-columns:repeat(auto-fit,minmax(120px,1fr))">
+    <div class="kpi"><div class="lbl">Valor</div><div class="val">${eur(m.valor)}</div></div>
+    <div class="kpi"><div class="lbl">Aportado</div><div class="val">${eur(m.aportado)}</div></div>
+    <div class="kpi"><div class="lbl">Beneficio</div><div class="val ${cls(m.beneficio)}">${eurS(m.beneficio)}</div><div class="det">${pctS(m.beneficio/m.aportado)}</div></div>
+    <div class="kpi"><div class="lbl">TIR anual</div><div class="val ${cls(m.tir)}">${pctS(m.tir)}</div></div></div>
+    <div class="mt">${Object.keys(w).map(f=>{const x=E.F[f];const v=x.value[E.N-1],a=x.inv[E.N-1];return `<div class="row"><span><i class="dot" style="background:${col(f)}"></i>${esc(f)}</span><span>${eur(v)} · <span class="${cls(v-a)}">${pctS((v-a)/a)}</span></span></div>`}).join("")}
+    <div class="row"><span>Este año</span><span class="${cls(m.ytd.r)}">${pctS(m.ytd.r)} · ${eurS(m.ytd.gain)}</span></div>
+    <div class="row"><span>Aportación media (12 meses)</span><span>${eur(aportMes(w))}/mes</span></div></div></div>`;
+  }).join("");
+
+  const p0 = miembros[0], w0 = SCOPES[p0], fs = Object.keys(w0), s0 = serie(w0);
+  const iguales = miembros.every(p=>JSON.stringify(SCOPES[p])===JSON.stringify(w0));
+  $("grupoChartT").textContent = iguales && miembros.length>1 ? "Evolución de la cartera de cada una" : `Evolución de la cartera de ${p0}`;
+  $("grupoChartS").textContent = iguales && miembros.length>1 ? `Las carteras de ${miembros.join(" y ")} son idénticas` : "";
+  $("grupoLegend").innerHTML = fs.map(f=>`<span><i class="dot" style="background:${col(f)}"></i>${esc(f)}</span>`).join("") + `<span><i class="dot" style="background:var(--neutral)"></i>Aportado</span>`;
+  const P = step(rango(s0.first,E.N),2);
+  mk("cGrupo",{type:"line",data:{datasets:[
+    ...fs.map((f,k)=>({label:f,data:P.map(i=>({x:E.days[i],y:E.F[f].value[i]*w0[f]})),borderColor:col(f),backgroundColor:alpha(col(f),.25),fill:k?"-1":"origin",stack:"v"})),
+    {label:"Aportado",data:P.map(i=>({x:E.days[i],y:s0.INV[i]})),borderColor:css("--neutral"),stepped:true,borderWidth:1.5,stack:"a"},
+  ]},options:{interaction:hover,scales:{x:timeX(),y:{...axisEur,stacked:true}},plugins:{tooltip:{callbacks:{label:c=>` ${c.dataset.label}: ${eur(c.parsed.y)}`}}}}});
+
+  if(!$("grupoForm").dataset.ok){
+    $("grupoForm").innerHTML = miembros.map(n=>`<label class="f">Año nacimiento ${esc(n)}<input type="number" data-nac="${esc(n)}" placeholder="año" value="${esc(store.get("nac_"+n,""))}"></label>`).join("")
+      + `<label class="f">Aportación €/mes (cada una)<input type="number" id="apG" value="${Math.round(aportMes(w0))}"></label><label class="f">Rentabilidad anual %<input type="number" id="rG" value="7" step="0.5"></label>`;
+    $("grupoForm").dataset.ok = 1;
+    $("grupoForm").querySelectorAll("input").forEach(i=>i.addEventListener("input",()=>{ if(i.dataset.nac) store.set("nac_"+i.dataset.nac,i.value); renderGrupo(); }));
+  }
+  const r = (+$("rG").value||0)/100, ap = +$("apG").value||0, y0 = new Date().getFullYear();
+  const proy = (p, anos) => { const m=metricas(serie(SCOPES[p])); let c=m.valor, apt=m.aportado; for(let k=0;k<anos*12;k++){c=c*Math.pow(1+r,1/12)+ap;apt+=ap} return {c,apt}; };
+  const nac = Object.fromEntries(miembros.map(n=>[n,+(store.get("nac_"+n,"")||0)]));
+  let h = `<table><tr><th>${miembros.some(n=>nac[n])?"Edad":"Año"}</th>${miembros.map(n=>`<th>${esc(n)}</th>`).join("")}</tr>`;
+  if(miembros.some(n=>nac[n])){
+    for(const edad of [18,21,25,30]) h += `<tr><td>${edad} años</td>${miembros.map(n=>{ const anos=nac[n]+edad-y0; if(!nac[n]||anos<0) return "<td>–</td>"; const p=proy(n,anos); return `<td><b>${eur(p.c)}</b><br><span style="color:var(--text-3);font-size:11px">en ${nac[n]+edad} · aportado ${eur(p.apt)}</span></td>`; }).join("")}</tr>`;
+  } else {
+    for(const anos of [5,10,15,20]) h += `<tr><td>${y0+anos}</td>${miembros.map(n=>{const p=proy(n,anos);return `<td><b>${eur(p.c)}</b><br><span style="color:var(--text-3);font-size:11px">aportado ${eur(p.apt)}</span></td>`}).join("")}</tr>`;
+  }
+  $("grupoProy").innerHTML = h + `</table><p class="note">Pon el año de nacimiento de cada una para verlo por edades (se guarda solo en este navegador).</p>`;
+}
+
+// ============================================================ objetivos
+function renderObjetivos(){
+  const y0 = new Date().getFullYear();
+  const objs = (D.objetivos||[]).filter(o=>E.F[o.fondo] && o.filas?.length);
+  const realDe = (f, anio) => { let i=-1; for(let j=0;j<E.N;j++) if(+E.days[j].slice(0,4)<=anio) i=j; return i>=0? E.F[f].value[i] : null; };
+  $("objCards").innerHTML = objs.length ? objs.map((o,k)=>{
+    const f = o.fondo, vNow = E.F[f].value[E.N-1];
+    const est = o.filas.find(r=>r.anio===y0)?.estimacion, ult = o.filas[o.filas.length-1], ok = est!=null && vNow>=est;
+    return `<div class="card"><h2>${esc(f)}: ${eur(ult.estimacion)} en ${ult.anio}</h2><p class="sub">${esc(o.plan)}${TIT[f].length>1?" · por titular":""}</p>
+      <div class="row"><span>Valor hoy</span><b>${eur(vNow)}</b></div>
+      <div class="row"><span>Plan para ${y0}</span><span>${eur(est)}</span></div>
+      <div class="row"><span>Estado</span><span class="status ${ok?"up":"down"}">${est==null?"–":ok?"✔ Por delante del plan "+eurS(vNow-est):"✖ Por detrás del plan "+eurS(vNow-est)}</span></div>
+      <div class="row"><span>Meta ${ult.anio}</span><span>${eur(ult.estimacion)} · llevas ${pct(vNow/ult.estimacion,0)}</span></div>
+      <div class="bar-prog"><i style="width:${Math.min(100,vNow/ult.estimacion*100)}%;background:${col(f)}"></i></div>
+      <div class="chart short mt"><canvas id="cObj${k}"></canvas></div></div>`;
+  }).join("") : `<div class="card">No hay objetivos. Puedes crearlos en la pestaña Datos.</div>`;
+  objs.forEach((o,k)=>{
+    mk("cObj"+k,{type:"bar",data:{labels:o.filas.map(r=>r.anio),datasets:[
+      {type:"line",label:"Plan",data:o.filas.map(r=>r.estimacion),borderColor:css("--neutral"),borderWidth:1.5},
+      {label:"Real",data:o.filas.map(r=>r.anio>y0?null:realDe(o.fondo,r.anio)),backgroundColor:col(o.fondo),maxBarThickness:22},
+    ]},options:{interaction:hover,scales:{x:{grid:{display:false}},y:axisEur},plugins:{tooltip:{callbacks:{label:c=>` ${c.dataset.label}: ${eur(c.parsed.y)}`}}}}});
+  });
+  const fi = $("fiScope"), cur = fi.value;
+  fi.innerHTML = Object.keys(SCOPES).map(k=>`<option value="${esc(k)}">Fondos de ${esc(k)}</option>`).join("") + `<option value="__liq">Todos los fondos + liquidez + pensiones</option>`;
+  fi.value = cur || PERSONAS[0] || "Todos";
+  renderSim(); renderFI();
+}
+function renderSim(){
+  const w = SCOPES[state.scope], m = metricas(serie(w));
+  if(state._simScope!==state.scope){ $("simCap").value=Math.round(m.valor); $("simAp").value=Math.round(aportMes(w)); state._simScope=state.scope; }
+  const cap=+$("simCap").value||0, ap=+$("simAp").value||0, sub=(+$("simSub").value||0)/100, r=(+$("simR").value||0)/100,
+        Y=Math.min(60,Math.max(1,+$("simY").value||1)), inf=(+$("simI").value||0)/100, obj=+$("simObj").value||0, y0=new Date().getFullYear();
+  const run = rr => { const out=[{y:y0,c:cap,a:cap}]; let c=cap,a=cap,apm=ap,hit=null;
+    for(let yy=1;yy<=Y;yy++){ for(let k=0;k<12;k++){c=c*Math.pow(1+rr,1/12)+apm;a+=apm} apm*=1+sub; out.push({y:y0+yy,c,a}); if(hit==null&&obj&&c>=obj) hit=y0+yy; }
+    return {out,hit}; };
+  const Pe=run(r-0.03), B=run(r), O=run(r+0.03), fin=B.out[Y];
+  $("simKpis").innerHTML = [
+    ["Capital final (esperado)", eur(fin.c), `Rango ${eur(Pe.out[Y].c)} – ${eur(O.out[Y].c)}`],
+    ["En euros de hoy", eur(fin.c/Math.pow(1+inf,Y)), `Descontando ${pct(inf)} de inflación`],
+    ["Total aportado", eur(fin.a), `${eur(fin.c-fin.a)} generados por el interés compuesto`],
+    ["Objetivo "+eur(obj), B.hit? "En "+B.hit : "No llega", `Pesimista ${Pe.hit||"no llega"} · optimista ${O.hit||"no llega"}`],
+    ["Regla del 72", r>0? (72/(r*100)).toFixed(1).replace(".",",")+" años":"–", "Tiempo en doblar el dinero sin aportar"],
+  ].map(kpiCard).join("");
+  mk("cSim",{type:"line",data:{labels:B.out.map(o=>o.y),datasets:[
+    {label:"Pesimista",data:Pe.out.map(o=>o.c),borderColor:css("--c2")},
+    {label:"Esperado",data:B.out.map(o=>o.c),borderColor:css("--accent"),borderWidth:2.5},
+    {label:"Optimista",data:O.out.map(o=>o.c),borderColor:css("--c3")},
+    {label:"Aportado",data:B.out.map(o=>o.a),borderColor:css("--neutral"),borderWidth:1.5},
+  ]},options:{interaction:hover,scales:{x:{grid:{display:false}},y:axisEur},plugins:{tooltip:{callbacks:{label:c=>` ${c.dataset.label}: ${eur(c.parsed.y)}`}}}}});
+}
+function renderFI(){
+  const g=+$("fiG").value||0, tr=(+$("fiR").value||4)/100, sc=$("fiScope").value, P_=D.patrimonio||{};
+  const need = g*12/tr;
+  const liq = (P_.liquidez||[]).reduce((s,x)=>s+(+x.saldo||0),0) + (P_.otros||[]).filter(o=>/efectivo|pensi/i.test(o.nombre)).reduce((s,o)=>s+(+o.valor||0),0);
+  const have = sc==="__liq" ? metricas(serie(SCOPES.Todos)).valor + liq : metricas(serie(SCOPES[sc]||SCOPES.Todos)).valor;
+  const alq = (P_.inmuebles||[]).reduce((s,x)=>s+(+x.alquiler||0)-(+x.gastos||0)-(+x.cuota||0),0);
+  const needAlq = Math.max(0,g-alq)*12/tr;
+  $("fiOut").innerHTML = `<div class="grid g6">
+    ${kpiCard(["Capital necesario", eur(need), `${eur(g)}/mes × 12 / ${pct(tr,2)}`])}
+    ${kpiCard(["Tienes", eur(have), `${pct(have/need)} del camino`])}
+    ${kpiCard([`Contando los alquileres netos (${eur(alq)}/mes)`, eur(needAlq), needAlq? pct(have/needAlq)+" del camino" : "✔ Los alquileres ya cubren el gasto"])}
+    </div><div class="bar-prog"><i style="width:${Math.min(100,have/need*100)}%"></i></div>`;
+}
+
+// ============================================================ comparativa
+function renderCompara(){
+  const w = SCOPES[state.scope], s = serie(w), m = metricas(s);
+  if(s.first<0) return;
+  const dep=(+$("cmpDep").value||0)/100, ipc=(+$("cmpIpc").value||0)/100;
+  const N=E.N, L=N-1, B=new Float64Array(N), Dp=new Float64Array(N), I=new Float64Array(N);
+  let ub=0, d=0, inf=0; const fd=Math.pow(1+dep,1/365), fi=Math.pow(1+ipc,1/365);
+  for(let i=0;i<N;i++){ ub+=s.CF[i]/E.bench[i]; B[i]=ub*E.bench[i]; d=d*fd+s.CF[i]; Dp[i]=d; inf=inf*fi+s.CF[i]; I[i]=inf; }
+  const tirDe = V => { const f=[]; for(let i=0;i<N;i++) if(s.CF[i]) f.push({d:E.days[i],v:-s.CF[i]}); f.push({d:E.days[L],v:V}); return xirr(f); };
+  const K=[["Tu cartera",s.V[L],m.tir],["Todo en MSCI World",B[L],tirDe(B[L])],["Depósito al "+pct(dep),Dp[L],dep],["Aportado + inflación",I[L],ipc]];
+  $("cmpKpis").innerHTML = K.map((k,j)=>kpiCard([k[0], eur(k[1]), `TIR ${pctS(k[2])}${j? ` · tu cartera ${s.V[L]>=k[1]?"gana":"pierde"} por <span class="${cls(s.V[L]-k[1])}">${eurS(s.V[L]-k[1])}</span>`:""}`])).join("");
+  const P = step(rango(s.first,N),3);
+  const ln = (lab,arr,c,wd=2) => ({label:lab,data:P.map(i=>({x:E.days[i],y:arr[i]})),borderColor:c,borderWidth:wd});
+  mk("cCmp",{type:"line",data:{datasets:[ln("Tu cartera",s.V,css("--accent"),2.5),ln("Todo en MSCI World",B,css("--c2")),ln("Depósito",Dp,css("--c3")),ln("Aportado + inflación",I,css("--neutral"),1.5)]},
+    options:{interaction:hover,scales:{x:timeX(),y:axisEur},plugins:{tooltip:{callbacks:{label:c=>` ${c.dataset.label}: ${eur(c.parsed.y)}`}}}}});
+}
+
+// ============================================================ patrimonio
+function renderPatrimonio(){
+  const P_ = D.patrimonio||{}, fondos = metricas(serie(SCOPES.Todos)).valor;
+  const inm = (P_.inmuebles||[]).map(x=>({...x, cashflow:(+x.alquiler||0)-(+x.gastos||0)-(+x.cuota||0)}));
+  const vInm = inm.reduce((s,x)=>s+(+x.valor||0),0), hip = inm.reduce((s,x)=>s+(+x.hipoteca||0),0);
+  const liq = (P_.liquidez||[]), tl = liq.reduce((s,x)=>s+(+x.saldo||0),0);
+  const comp = [["Inmuebles",vInm],["Fondos (todas las carteras)",fondos],...(tl?[["Liquidez",tl]]:[]),...(P_.otros||[]).filter(o=>+o.valor).map(o=>[o.nombre,+o.valor])].sort((a,b)=>b[1]-a[1]);
+  const bruto = comp.reduce((s,c)=>s+c[1],0), deuda = hip+(+P_.pasivos||0), neto = bruto-deuda;
+  const nom = (+P_.nominas||0)+(+P_.otros_ingresos||0), alqB = inm.reduce((s,x)=>s+(+x.alquiler||0),0), alqN = inm.reduce((s,x)=>s+x.cashflow,0), cuotas = inm.reduce((s,x)=>s+(+x.cuota||0),0);
+  $("patKpis").innerHTML = [
+    ["Patrimonio neto", eur(neto), `Bruto ${eur(bruto)}`],
+    ["Deuda total", eur(deuda), `LTV ${pct(deuda/bruto)}`],
+    ["Inmuebles", eur(vInm), `${pct(vInm/bruto,0)} del patrimonio · ${inm.length} inmuebles`],
+    ["Fondos", eur(fondos), `${pct(fondos/bruto)} del patrimonio · valor de mercado`],
+    ["Ingresos netos mes", eur(nom+alqN), `Nóminas ${eur(nom)} + alquileres netos ${eur(alqN)}`],
+    ["Tasa de esfuerzo", pct(cuotas/(nom+alqN)), `Cuotas ${eur(cuotas)}/mes · liquidez ${eur(tl)}`],
+  ].map(kpiCard).join("");
+  mk("cPat",{type:"bar",data:{labels:comp.map(c=>c[0]),datasets:[{data:comp.map(c=>c[1]),backgroundColor:css("--accent"),maxBarThickness:28}]},
+    options:{indexAxis:"y",scales:{x:axisEur,y:{grid:{display:false}}},plugins:{tooltip:{callbacks:{label:c=>` ${eur(c.parsed.x)} (${pct(c.parsed.x/bruto)})`}}}}});
+  const ing = [["Nóminas",nom,"--accent"],["Alquileres netos",alqN,"--accent"],["Gastos y cuotas de los pisos",alqB-alqN,"--neutral"]].filter(x=>x[1]);
+  mk("cIng",{type:"bar",data:{labels:ing.map(x=>x[0]),datasets:[{data:ing.map(x=>x[1]),backgroundColor:ing.map(x=>css(x[2])),maxBarThickness:46}]},
+    options:{scales:{x:{grid:{display:false}},y:axisEur},plugins:{tooltip:{callbacks:{label:c=>` ${eur(c.parsed.y)}/mes · ${eur(c.parsed.y*12)}/año`}}}}});
+
+  let h = `<tr><th>Inmueble</th><th class="l">Situación</th><th class="l">Propiedad</th><th>Valor</th><th>Hipoteca</th><th>Neto</th><th>LTV</th><th>Alquiler/mes</th><th>Gastos</th><th>Cuota</th><th>Cashflow/mes</th><th>Rent. bruta</th><th>Rent. neta</th><th>Sobre capital</th></tr>`;
+  for(const x of inm){
+    const n=x.valor-x.hipoteca, alq=x.alquiler>0;
+    h += `<tr><td>${esc(x.nombre)}</td><td class="l">${esc(x.situacion)}</td><td class="l">${esc(x.propiedad)}</td><td>${eur(x.valor)}</td><td>${x.hipoteca?eur(x.hipoteca):"–"}</td><td>${eur(n)}</td><td>${x.hipoteca?pct(x.hipoteca/x.valor):"–"}</td>
+      <td>${alq?eur(x.alquiler):"–"}</td><td>${alq?eur(x.gastos):"–"}</td><td>${x.cuota?eur(x.cuota):"–"}</td><td class="${cls(x.cashflow)}">${alq?eur(x.cashflow):"–"}</td>
+      <td>${alq?pct(x.alquiler*12/x.valor,2):"–"}</td><td>${alq?pct((x.alquiler-x.gastos)*12/x.valor,2):"–"}</td><td>${alq&&n>0?pct(x.cashflow*12/n,2):"–"}</td></tr>`;
+  }
+  const alqV = inm.filter(x=>x.alquiler>0).reduce((s,x)=>s+x.valor,0), gas = inm.reduce((s,x)=>s+(+x.gastos||0),0);
+  h += `<tr class="tot"><td>Total</td><td></td><td></td><td>${eur(vInm)}</td><td>${eur(hip)}</td><td>${eur(vInm-hip)}</td><td>${pct(hip/vInm)}</td><td>${eur(alqB)}</td><td>${eur(gas)}</td><td>${eur(cuotas)}</td><td>${eur(alqN)}</td><td>${pct(alqB*12/alqV,2)}</td><td>${pct((alqB-gas)*12/alqV,2)}</td><td></td></tr>`;
+  $("tInm").innerHTML = h + `<tr><td colspan="14" class="l" style="color:var(--text-3);font-size:12px">Rentabilidades medias sobre los inmuebles alquilados (${eur(alqV)}).</td></tr>`;
+
+  const A = D.alquileres||[], casas = [...new Set(A.map(a=>a.casa))], anios = [...new Set(A.map(a=>a.anio))].sort();
+  $("alqLegend").innerHTML = casas.map((c,k)=>`<span><i class="dot" style="background:var(${SLOTS[k%8]})"></i>${esc(c)}</span>`).join("");
+  mk("cAlq",{type:"bar",data:{labels:anios,datasets:casas.map((c,k)=>({label:c,data:anios.map(y=>A.find(a=>a.casa===c&&a.anio===y)?.cashflow??null),backgroundColor:css(SLOTS[k%8]),maxBarThickness:26}))},
+    options:{interaction:hover,scales:{x:{grid:{display:false}},y:axisEur},plugins:{tooltip:{filter:c=>c.parsed.y!=null,callbacks:{label:c=>{const r=A.find(a=>a.casa===c.dataset.label&&a.anio===anios[c.dataIndex])?.rent;return ` ${c.dataset.label}: ${eur(c.parsed.y)}${r?" · "+pct(r,2):""}`}}}}}});
+  $("tLiq").innerHTML = `<tr><th>Entidad</th><th>Saldo</th><th>%</th></tr>` + liq.map(x=>`<tr><td>${esc(x.banco)}</td><td>${eur(x.saldo)}</td><td>${pct(x.saldo/tl,0)}</td></tr>`).join("") + `<tr class="tot"><td>Total</td><td>${eur(tl)}</td><td>100 %</td></tr>`;
+}
+
+// ============================================================ pisos
+const CONCEPTOS = [["ingresos","Alquiler"],["ingresos_extra","Otros ingresos"],["seguro","Seguro hogar"],["comunidad","Comunidad"],["ibi","IBI"],["basura","Basura"],
+  ["suministros","Suministros"],["seguro_impago","Seguro impago"],["gestion","Gestión alquiler"],["extras","Reparaciones y extras"],["otros","Obras y otros"],["hipoteca","Cuota hipoteca"]];
+const GASTOS = CONCEPTOS.map(c=>c[0]).filter(k=>!["ingresos","ingresos_extra","hipoteca"].includes(k));
+// grupos de gasto para la gráfica (máximo 6 colores)
+const GRUPOS_GASTO = [["Impuestos (IBI, basura)",["ibi","basura"],"--c2"],["Seguros",["seguro","seguro_impago"],"--c5"],["Comunidad",["comunidad"],"--c4"],
+  ["Suministros",["suministros"],"--c7"],["Gestión",["gestion"],"--c6"],["Reparaciones y obras",["extras","otros"],"--c8"]];
+const IRPF_AHORRO = [[6000,.19],[50000,.21],[200000,.23],[300000,.27],[Infinity,.30]];
+const irpf = b => { let t=0, prev=0; for(const [lim,tp] of IRPF_AHORRO){ if(b<=prev) break; t += (Math.min(b,lim)-prev)*tp; prev=lim; } return Math.max(0,t); };
+const nProp = p => /50\s*%/.test(p.propiedad||"") ? 2 : 1;
+const mesesEntre = (a,b) => (toD(b)-toD(a))/dayMs/30.4375;
+
+// Cuadro de amortización francés mensual; las amortizaciones anticipadas reducen capital (mantienen cuota)
+function amortiza(h, inicio, extras=[]){
+  const P=+h.importe||0, n=Math.round((+h.plazo||0)*12), i=(+h.tipo||0)/12;
+  if(!P||!n||!inicio) return null;
+  const cuota = i ? P*i/(1-Math.pow(1+i,-n)) : P/n;
+  const ex = (extras||[]).filter(e=>e.fecha&&+e.importe).map(e=>({m:e.fecha.slice(0,7),v:+e.importe}));
+  const d0 = toD(inicio), out=[]; let saldo=P, intAc=0, capAc=0;
+  for(let k=1; k<=n*2 && saldo>0.01; k++){
+    const f = iso(new Date(Date.UTC(d0.getUTCFullYear(), d0.getUTCMonth()+k, 1)));
+    const int = saldo*i, cap = Math.min(cuota-int, saldo);
+    saldo -= cap; intAc += int; capAc += cap;
+    for(const e of ex) if(e.m===f.slice(0,7)){ const a=Math.min(e.v,saldo); saldo-=a; capAc+=a; }
+    out.push({fecha:f, saldo, intAc, capAc});
+  }
+  const hoy = E.hoy, pasadas = out.filter(o=>o.fecha<=hoy), ult = pasadas.at(-1);
+  return {cuota, tabla:out, pendiente: ult? ult.saldo : P, intereses: ult? ult.intAc : 0, capital: ult? ult.capAc : 0, fin: out.at(-1)?.fecha, pagadas: pasadas.length, n};
+}
+
+function analizarPiso(p){
+  const hoy = E.hoy, y0 = +hoy.slice(0,4);
+  const inm = (D.patrimonio?.inmuebles||[]).find(x=>x.nombre===p.inmueble);
+  const inv = (+p.precio||0)+(+p.gastos_compra||0)+(+p.reforma||0)+(+p.otros_iniciales||0);
+  const h = p.hipoteca||{}, hipIni = +h.importe||0, eq0 = inv-hipIni;
+  // el cuadro usa todas; aportado y TIR solo las ya hechas (las futuras aún no han salido del bolsillo)
+  const extras = (p.amortizaciones_extra||[]).filter(e=>e.fecha&&+e.importe).sort((a,b)=>a.fecha<b.fecha?-1:1);
+  const extrasPas = extras.filter(e=>e.fecha<=hoy), extrasFut = extras.filter(e=>e.fecha>hoy);
+  const extrasT = extrasPas.reduce((s,e)=>s+(+e.importe),0);
+  const am = hipIni ? amortiza(h, p.fecha_compra, extras) : null;
+  const pend = am ? am.pendiente : 0;
+  const valor = +(inm?.valor) || +p.valor_idealista || inv, fuenteValor = inm?.valor ? "tu valoración (Patrimonio)" : p.valor_idealista ? "Idealista" : "coste";
+  const filas = (p.anual||[]).slice().sort((a,b)=>a.anio-b.anio).map(r=>{
+    const ing=(+r.ingresos||0)+(+r.ingresos_extra||0), gas=GASTOS.reduce((s,k)=>s+(+r[k]||0),0), hip=+r.hipoteca||0;
+    return {...r, ing, gas, hip, cf: ing-gas-hip};
+  });
+  // mensual «de hoy»: de Patrimonio si el piso está vinculado; si no, último año completo
+  const ultCompleto = filas.filter(r=>p.fecha_compra && r.anio > +p.fecha_compra.slice(0,4)).at(-1);
+  const mes = inm ? {alq:+inm.alquiler||0, gas:+inm.gastos||0, cuota:+inm.cuota||0, fuente:"Patrimonio"}
+                  : ultCompleto ? {alq:ultCompleto.ing/12, gas:ultCompleto.gas/12, cuota:ultCompleto.hip/12, fuente:"año "+ultCompleto.anio} : {alq:0,gas:0,cuota:0,fuente:"–"};
+  // año en curso sin datos: estimación con lo de hoy
+  if(!filas.some(r=>r.anio===y0) && p.fecha_compra && p.fecha_compra < y0+"-01-01" && (mes.alq||mes.gas)){
+    const m = mesesEntre(y0+"-01-01", hoy);
+    filas.push({anio:y0, est:true, ing:mes.alq*m, gas:mes.gas*m, hip:mes.cuota*m, cf:(mes.alq-mes.gas-mes.cuota)*m, ingresos:mes.alq*m, hipoteca:mes.cuota*m});
+  }
+  const cfAcum = filas.reduce((s,r)=>s+r.cf,0), aportado = eq0+extrasT;
+  const cfAnual = (mes.alq-mes.gas-mes.cuota)*12;
+  const equityHoy = valor-pend;
+  // TIR: fondos propios en la compra, cashflow de cada año a mitad de periodo, valor neto de deuda hoy
+  const flows = [];
+  if(p.fecha_compra){
+    flows.push({d:p.fecha_compra, v:-eq0});
+    for(const e of extrasPas) flows.push({d:e.fecha, v:-(+e.importe)});
+    for(const r of filas){
+      const a = r.anio===+p.fecha_compra.slice(0,4) ? p.fecha_compra : r.anio+"-01-01";
+      const b = r.est ? hoy : r.anio+"-12-31";
+      flows.push({d: iso(new Date((+toD(a)+ +toD(b))/2)), v:r.cf});
+    }
+    flows.push({d:hoy, v:equityHoy});
+    flows.sort((x,y)=>x.d<y.d?-1:1);
+  }
+  const anos = p.fecha_compra ? yearsBetween(p.fecha_compra,hoy) : null;
+  return {p, inm, inv, hipIni, eq0, extras, extrasPas, extrasFut, extrasT, aportado, am, pend, valor, fuenteValor, filas, mes, cfAcum, cfAnual, equityHoy, flows, anos,
+    tir: flows.length>2 ? xirr(flows) : null,
+    plusvalia: valor-inv, beneficio: cfAcum+equityHoy-aportado,
+    bruta: mes.alq*12/inv, neta: (mes.alq-mes.gas)*12/inv, coc: cfAnual/eq0,
+    recuperado: cfAcum/aportado, payback: cfAnual>0 ? Math.max(0,aportado-cfAcum)/cfAnual : null,
+    m2: p.sup_construida ? (+p.precio||0)/p.sup_construida : null, m2hoy: p.sup_construida ? valor/p.sup_construida : null};
+}
+
+function renderPisos(){
+  const pisos = (D.pisos||[]).filter(p=>!p.error);
+  if(!pisos.length){ $("pisKpis").innerHTML = `<div class="card">No hay pisos. Añádelos en la pestaña Datos.</div>`; return; }
+  const A = pisos.map(analizarPiso), sum = k => A.reduce((s,a)=>s+(a[k]||0),0);
+  const pcolor = k => css(SLOTS[k%8]);
+  if(!state.piso || !A.some(a=>a.p.nombre===state.piso)) state.piso = A[0].p.nombre;
+  // TIR conjunta
+  const fl = A.flatMap(a=>a.flows).sort((x,y)=>x.d<y.d?-1:1), tirT = xirr(fl);
+  const cfAc = sum("cfAcum"), aport = sum("aportado");
+  $("pisKpis").innerHTML = [
+    ["Inversión total", eur(sum("inv")), `Fondos propios ${eur(sum("eq0"))} + hipotecas ${eur(sum("hipIni"))}`],
+    ["Valor actual", eur(sum("valor")), `Plusvalía latente <span class="${cls(sum("plusvalia"))}">${eurS(sum("plusvalia"))}</span>`],
+    ["Patrimonio neto en pisos", eur(sum("equityHoy")), `Deuda pendiente ${eur(sum("pend"))}`],
+    ["Cashflow acumulado", `<span class="${cls(cfAc)}">${eurS(cfAc)}</span>`, `${pct(cfAc/aport,0)} del dinero aportado (${eur(aport)}) ya recuperado`],
+    ["Cashflow actual", `${eur(sum("cfAnual"))}/año`, `${eur(sum("cfAnual")/12)}/mes, tras gastos y cuotas`],
+    ["TIR de los pisos", `<span class="${cls(tirT)}">${pctS(tirT)}</span>`, `Beneficio total ${eurS(sum("beneficio"))} (cashflow + plusvalía)`],
+  ].map(kpiCard).join("");
+
+  $("pisCards").innerHTML = A.map((a,k)=>`<div class="card owner">
+    <div class="name"><i class="dot" style="background:${pcolor(k)}"></i>${esc(a.p.nombre)} <span class="chip">${esc(a.p.propiedad||"")}</span></div>
+    <div class="row"><span>Compra</span><span>${fmtDate(a.p.fecha_compra)}${a.anos!=null?` · hace ${a.anos.toFixed(1).replace(".",",")} años`:""}</span></div>
+    <div class="row"><span>Inversión total</span><span>${eur(a.inv)}${a.hipIni?` · hipoteca ${eur(a.hipIni)}`:""}</span></div>
+    <div class="row"><span>Valor (${esc(a.fuenteValor)})</span><b>${eur(a.valor)}</b></div>
+    <div class="row"><span>Plusvalía latente</span><span class="${cls(a.plusvalia)}">${eurS(a.plusvalia)} · ${pctS(a.plusvalia/a.inv)}</span></div>
+    <div class="row"><span>Cashflow hoy</span><span class="${cls(a.cfAnual)}">${eur(a.cfAnual/12)}/mes · ${eur(a.cfAnual)}/año</span></div>
+    <div class="row"><span>Rentab. bruta · neta · cash-on-cash</span><span>${pct(a.bruta)} · ${pct(a.neta)} · ${pct(a.coc)}</span></div>
+    <div class="row"><span>TIR (con plusvalía)</span><b class="${cls(a.tir)}">${pctS(a.tir)}</b></div>
+    <div class="row" style="border:0"><span>Recuperado ${eur(a.cfAcum)} de ${eur(a.aportado)}</span><span>${pct(a.recuperado,0)}${a.payback!=null?` · faltan ${a.payback.toFixed(1).replace(".",",")} años`:""}</span></div>
+    <div class="bar-prog"><i style="width:${Math.max(0,Math.min(100,a.recuperado*100))}%;background:${pcolor(k)}"></i></div></div>`).join("");
+
+  // tabla comparativa
+  const filasT = [
+    ["Fecha de compra", a=>fmtDate(a.p.fecha_compra)], ["Propiedad", a=>esc(a.p.propiedad||"–")],
+    ["Superficie construida / útil", a=>a.p.sup_construida?`${nf0.format(a.p.sup_construida)} / ${nf0.format(a.p.sup_util||0)} m²`:"–"],
+    ["Año de construcción", a=>a.p.anio_construccion||"–"],
+    ["sep","Compra"],
+    ["Precio de compra", a=>eur(a.p.precio)], ["Precio €/m² (construido)", a=>a.m2?eur(a.m2):"–"],
+    ["Impuestos y gastos de compra", a=>eur(a.p.gastos_compra)], ["Reforma y mobiliario", a=>eur(a.p.reforma)], ["Otras inversiones iniciales", a=>a.p.otros_iniciales?eur(a.p.otros_iniciales):"–"],
+    ["Inversión total", a=>`<b>${eur(a.inv)}</b>`], ["Hipoteca inicial", a=>a.hipIni?eur(a.hipIni):"–"], ["Fondos propios", a=>eur(a.eq0)],
+    ["sep","Hoy"],
+    ["Valor actual", a=>`<b>${eur(a.valor)}</b>`], ["Valor según Idealista", a=>a.p.valor_idealista?eur(a.p.valor_idealista):"–"], ["Valor €/m²", a=>a.m2hoy?eur(a.m2hoy):"–"],
+    ["Plusvalía latente", a=>`<span class="${cls(a.plusvalia)}">${eurS(a.plusvalia)} (${pctS(a.plusvalia/a.inv)})</span>`],
+    ["Hipoteca pendiente", a=>a.hipIni?eur(a.pend):"–"], ["Patrimonio neto en el piso", a=>eur(a.equityHoy)],
+    ["sep","Alquiler"],
+    ["Alquiler actual /mes", a=>eur(a.mes.alq)], ["Alquiler de mercado (Idealista)", a=>a.p.alquiler_idealista?`${eur(a.p.alquiler_idealista)} <span class="${cls(a.p.alquiler_idealista-a.mes.alq)}">(${pctS(a.p.alquiler_idealista/a.mes.alq-1,0)})</span>`:"–"],
+    ["Gastos /mes", a=>eur(a.mes.gas)], ["Cuota hipoteca /mes", a=>a.mes.cuota?eur(a.mes.cuota):"–"], ["Cashflow /mes", a=>`<span class="${cls(a.cfAnual)}">${eur(a.cfAnual/12)}</span>`],
+    ["sep","Rentabilidad"],
+    ["Bruta (alquiler / inversión)", a=>pct(a.bruta,2)], ["Neta (sin hipoteca)", a=>pct(a.neta,2)], ["Cash-on-cash (cashflow / fondos propios)", a=>pct(a.coc,2)],
+    ["Neta sobre valor actual", a=>pct((a.mes.alq-a.mes.gas)*12/a.valor,2)],
+    ["PER (años de alquiler para pagar el valor)", a=>a.mes.alq?(a.valor/(a.mes.alq*12)).toFixed(1).replace(".",","):"–"],
+    ["Cashflow acumulado", a=>`<span class="${cls(a.cfAcum)}">${eurS(a.cfAcum)}</span>`], ["Recuperado de lo aportado", a=>pct(a.recuperado,0)],
+    ["Años para recuperar lo que falta", a=>a.payback!=null?a.payback.toFixed(1).replace(".",","):"–"],
+    ["Beneficio total (cashflow + plusvalía)", a=>`<b class="${cls(a.beneficio)}">${eurS(a.beneficio)}</b>`],
+    ["TIR anual", a=>`<b class="${cls(a.tir)}">${pctS(a.tir)}</b>`],
+  ];
+  $("tPisos").innerHTML = `<tr><th></th>${A.map((a,k)=>`<th><i class="dot" style="background:${pcolor(k)}"></i>${esc(a.p.nombre)}</th>`).join("")}</tr>`
+    + filasT.map(f=>f[0]==="sep" ? `<tr><td colspan="${A.length+1}" style="padding-top:14px;font-weight:650;color:var(--text-2)">${f[1]}</td></tr>`
+      : `<tr><td>${f[0]}</td>${A.map(a=>`<td>${f[1](a)}</td>`).join("")}</tr>`).join("");
+
+  // recuperación y cashflow anual
+  const anios = [...new Set(A.flatMap(a=>a.filas.map(r=>r.anio)))].sort();
+  $("recLegend").innerHTML = $("cfPisLegend").innerHTML = A.map((a,k)=>`<span><i class="dot" style="background:${pcolor(k)}"></i>${esc(a.p.nombre)}</span>`).join("");
+  mk("cRec",{type:"line",data:{labels:anios,datasets:A.map((a,k)=>{ let ac=0; return {label:a.p.nombre,borderColor:pcolor(k),pointRadius:3,
+      data:anios.map(y=>{ const r=a.filas.find(r=>r.anio===y); if(!r) return a.filas.some(r=>r.anio<y)?ac/a.aportado:null; ac+=r.cf; return ac/a.aportado; })}; })},
+    options:{interaction:hover,scales:{x:{grid:{display:false}},y:axisPct},plugins:{tooltip:{callbacks:{label:c=>` ${c.dataset.label}: ${pct(c.parsed.y,0)} recuperado`}}}}});
+  const hayEst = A.some(a=>a.filas.some(r=>r.est));
+  $("cfPisSub").textContent = "Después de gastos y cuota de hipoteca" + (hayEst? ` · ${new Date().getFullYear()} estimado con el alquiler de hoy (trama clara)`:"");
+  mk("cCfPis",{type:"bar",data:{labels:anios,datasets:A.map((a,k)=>({label:a.p.nombre,maxBarThickness:26,
+      data:anios.map(y=>a.filas.find(r=>r.anio===y)?.cf??null),
+      backgroundColor:anios.map(y=>a.filas.find(r=>r.anio===y)?.est? alpha(pcolor(k),.35) : pcolor(k))}))},
+    options:{interaction:hover,scales:{x:{grid:{display:false}},y:axisEur},plugins:{tooltip:{filter:c=>c.parsed.y!=null,callbacks:{label:c=>` ${c.dataset.label}: ${eurS(c.parsed.y)}${A[c.datasetIndex].filas.find(r=>r.anio===anios[c.dataIndex])?.est?" (estimado)":""}`}}}}});
+
+  // detalle del piso elegido
+  $("pisSeg").innerHTML = A.map(a=>`<button class="${a.p.nombre===state.piso?"on":""}">${esc(a.p.nombre)}</button>`).join("");
+  $("pisSeg").querySelectorAll("button").forEach(b=>b.onclick=()=>{state.piso=b.textContent;state._venta=null;renderPisos()});
+  const a = A.find(a=>a.p.nombre===state.piso), F = a.filas;
+  $("pisDetT").textContent = `Ingresos y gastos de ${a.p.nombre}`;
+  $("pisDetS").textContent = `Por año · gastos en negativo${F.some(r=>r.est)?" · el año en curso es una estimación":""}`;
+  const grupos = GRUPOS_GASTO.filter(g=>F.some(r=>g[1].some(k=>+r[k])));
+  const series = [["Alquiler e ingresos",r=>r.ing,"--pos"], ...grupos.map(g=>[g[0],r=>-g[1].reduce((s,k)=>s+(+r[k]||0),0),g[2]]), ...(F.some(r=>r.hip)?[["Cuota hipoteca",r=>-r.hip,"--neutral"]]:[])];
+  if(F.some(r=>r.est)) series.splice(1,0,["Gastos (estimación)",r=>r.est?-r.gas:0,"--c3"]);
+  $("pisDetLegend").innerHTML = series.map(s=>`<span><i class="dot" style="background:var(${s[2]})"></i>${s[0]}</span>`).join("");
+  mk("cPisDet",{type:"bar",data:{labels:F.map(r=>r.anio+(r.est?" (est.)":"")),datasets:series.map(s=>({label:s[0],data:F.map(s[1]),backgroundColor:css(s[2]),stack:"s",maxBarThickness:46,borderRadius:0}))},
+    options:{interaction:hover,scales:{x:{stacked:true,grid:{display:false}},y:{...axisEur,stacked:true}},
+      plugins:{tooltip:{filter:c=>c.parsed.y!==0,callbacks:{label:c=>` ${c.dataset.label}: ${eur(c.parsed.y)}`,footer:it=>it.length ? "Cashflow: "+eurS(F[it[0].dataIndex].cf) : ""}}}}});
+  const conc = CONCEPTOS.filter(c=>F.some(r=>+r[c[0]]));
+  $("tPisDet").innerHTML = `<tr><th>Concepto</th>${F.map(r=>`<th>${r.anio}${r.est?"*":""}</th>`).join("")}<th>Total</th></tr>`
+    + conc.map(([k,l])=>{ const sg = ["ingresos","ingresos_extra"].includes(k)?1:-1; const t=F.reduce((s,r)=>s+(+r[k]||0),0);
+        return `<tr><td>${l}</td>${F.map(r=>`<td>${+r[k]?eur(sg*r[k]):"–"}</td>`).join("")}<td>${eur(sg*t)}</td></tr>`; }).join("")
+    + (F.some(r=>r.est)?`<tr><td>Gastos (estimación)</td>${F.map(r=>`<td>${r.est?eur(-r.gas):""}</td>`).join("")}<td></td></tr>`:"")
+    + `<tr class="tot"><td>Cashflow</td>${F.map(r=>`<td class="${cls(r.cf)}">${eurS(r.cf)}</td>`).join("")}<td class="${cls(a.cfAcum)}">${eurS(a.cfAcum)}</td></tr>`
+    + `<tr><td>Rentabilidad sobre fondos propios</td>${F.map(r=>`<td>${pct(r.cf/a.eq0)}</td>`).join("")}<td></td></tr>`;
+
+  // hipoteca
+  $("pisHipCard").style.display = a.am ? "" : "none";
+  if(a.am){
+    const h = a.p.hipoteca, real = a.inm ? +a.inm.hipoteca : null, dif = real!=null ? real-a.pend : null;
+    $("pisHipSub").textContent = `${eur(h.importe)} al ${pct(h.tipo,2)} a ${h.plazo} años · cuota ${eur(a.am.cuota,2)}/mes · ${a.am.pagadas} de ${a.am.n} cuotas pagadas`;
+    $("pisHipKpis").innerHTML = [
+      ["Pendiente (cuadro)", eur(a.pend), `${pct(a.pend/h.importe,0)} del préstamo · LTV ${pct(a.pend/a.valor)}`],
+      ["Pendiente según Patrimonio", real!=null?eur(real):"–", (()=>{
+        if(dif==null) return "";
+        if(Math.abs(dif)<=500) return "Coincide con el cuadro";
+        const prox = a.extrasFut[0], tras = prox && a.am.tabla.find(o=>o.fecha>=prox.fecha.slice(0,7)+"-01");
+        return `<span class="down">${eurS(dif)} frente al cuadro</span>` + (tras ? ` · tras la amortización del ${fmtDate(prox.fecha)} quedarán ${eur(tras.saldo)}`
+          : ` · si hubo otra amortización anticipada, añádela en Datos → Pisos`);
+      })()],
+      ["Intereses pagados", eur(a.am.intereses), `Capital amortizado ${eur(a.am.capital)}`],
+      ["Intereses totales del préstamo", eur(a.am.tabla.at(-1).intAc), `Fin: ${fmtDate(a.am.fin)}`],
+      ...(a.extras.length ? (()=>{ const base = amortiza(h, a.p.fecha_compra, []);
+        const ahorro = base.tabla.at(-1).intAc - a.am.tabla.at(-1).intAc, prox = a.extrasFut[0];
+        return [["Amortizaciones anticipadas", eur(a.extrasT), `${a.extrasPas.length} ${a.extrasPas.length===1?"hecha":"hechas"}${prox?` · próxima ${eur(prox.importe)} el ${fmtDate(prox.fecha)}`:""}`],
+                ["Ahorro de intereses", `<span class="up">${eur(ahorro)}</span>`, `Termináis el ${fmtDate(a.am.fin)} en vez del ${fmtDate(base.fin)} (manteniendo la cuota)`]]; })() : []),
+    ].map(kpiCard).join("");
+    const T = a.am.tabla.filter((o,i)=>i%6===0 || i===a.am.tabla.length-1);
+    mk("cHip",{type:"line",data:{datasets:[
+      {label:"Capital pendiente",data:[{x:a.p.fecha_compra,y:+h.importe},...T.map(o=>({x:o.fecha,y:o.saldo}))],borderColor:css("--accent"),backgroundColor:alpha(css("--accent"),.1),fill:"origin"},
+      ...(real!=null?[{type:"scatter",label:"Hoy según Patrimonio",data:[{x:E.hoy,y:real}],backgroundColor:css("--c2"),borderColor:css("--surface"),borderWidth:2,pointRadius:7}]:[]),
+    ]},options:{interaction:{mode:"nearest",intersect:false},scales:{x:timeX(),y:axisEur},plugins:{tooltip:{callbacks:{label:c=>` ${c.dataset.label}: ${eur(c.parsed.y)}`}}}}});
+  }
+  renderVenta(a);
+}
+
+function renderVenta(a){
+  if(!a){ const p=(D.pisos||[]).find(p=>p.nombre===state.piso); if(!p) return; a=analizarPiso(p); }
+  if(state._venta!==a.p.nombre){ $("vPrecio").value=Math.round(a.valor); state._venta=a.p.nombre; }
+  const pv=+$("vPrecio").value||0, gv=pv*(+$("vGastos").value||0)/100, plusv=+$("vPlusv").value||0, amF=+$("vAmortF").value||0, np=nProp(a.p);
+  const coste = a.inv - amF, ganancia = pv-gv-plusv-coste;
+  const impuesto = ganancia>0 ? irpf(ganancia/np)*np : 0;
+  const neto = pv-gv-plusv-impuesto-a.pend, resultado = a.cfAcum+neto-a.aportado;
+  const tir = a.flows.length ? xirr([...a.flows.slice(0,-1), {d:E.hoy, v:neto}].sort((x,y)=>x.d<y.d?-1:1)) : null;
+  $("ventaSub").textContent = `${a.p.nombre}: si lo vendierais hoy · ${np>1?"2 propietarios al 50 %":"1 propietario"}`;
+  $("ventaKpis").innerHTML = [
+    ["Os quedaría en el bolsillo", eur(neto), "Tras gastos, impuestos y cancelar la hipoteca"],
+    ["IRPF estimado", eur(impuesto), `Ganancia patrimonial ${eurS(ganancia)}${np>1?" (repartida entre 2)":""}`],
+    ["Resultado total de la inversión", `<span class="${cls(resultado)}">${eurS(resultado)}</span>`, `Cashflows ${eurS(a.cfAcum)} + venta neta − ${eur(a.aportado)} aportados`],
+    ["TIR si vendes hoy", `<span class="${cls(tir)}">${pctS(tir)}</span>`, `Sin vender (valor bruto): ${pctS(a.tir)}`],
+  ].map(kpiCard).join("");
+  const fila = (l,v,b) => `<tr${b?' class="tot"':""}><td>${l}</td><td>${v}</td></tr>`;
+  $("tVenta").innerHTML = fila("Precio de venta",eur(pv)) + fila("Gastos de venta",eur(-gv)) + fila("Plusvalía municipal",eur(-plusv))
+    + fila("Coste de adquisición (compra + gastos + reforma − amortización fiscal)",eur(coste)) + fila("Ganancia patrimonial",eurS(ganancia))
+    + fila("IRPF",eur(-impuesto)) + fila("Hipoteca a cancelar",eur(-a.pend)) + fila("Neto de la venta",eur(neto),true);
+}
+
+// ============================================================ banco (resumen para hipoteca / préstamo)
+const edad = f => { if(!f) return null; const n=toD(f), h=new Date(); let e=h.getUTCFullYear()-n.getUTCFullYear(); if(h.getUTCMonth()<n.getUTCMonth()||(h.getUTCMonth()===n.getUTCMonth()&&h.getUTCDate()<n.getUTCDate())) e--; return e; };
+const antiguedad = f => { if(!f) return "—"; const m=Math.floor(mesesEntre(f,E.hoy)); return `${Math.floor(m/12)} años y ${m%12} meses (desde ${f.slice(5,7)}/${f.slice(0,4)})`; };
+// los fondos que cuentan son los de los propios titulares (no los de las hijas): nombre de pila = titular del fondo
+const fondosDe = nombre => { const pila=String(nombre||"").trim().split(/\s+/)[0]; const w=SCOPES[pila]; return w ? metricas(serie(w)).valor : 0; };
+
+function datosBanco(){
+  const P_ = D.patrimonio||{}, per = (D.personas||[]).map(p=>({...p, ...(D.personas_extra?.[p.nombre]||{})}));
+  const inm = (P_.inmuebles||[]).map(x=>({...x, valor:+x.valor||0, hipoteca:+x.hipoteca||0, cuota:+x.cuota||0, alquiler:+x.alquiler||0, gastos:+x.gastos||0}));
+  const nominas = per.reduce((s,p)=>s+(+p.neto_mes||0),0) || (+P_.nominas||0), otrosIng = +P_.otros_ingresos||0;
+  const alqB = inm.reduce((s,x)=>s+x.alquiler,0), alqG = inm.reduce((s,x)=>s+x.gastos,0), cuotas = inm.reduce((s,x)=>s+x.cuota,0);
+  const ingresos = nominas + otrosIng + alqB - alqG;
+  const fondos = per.map(p=>({nombre:p.nombre, valor:fondosDe(p.nombre)})).filter(f=>f.valor);
+  const liq = (P_.liquidez||[]).reduce((s,x)=>s+(+x.saldo||0),0);
+  const otros = (P_.otros||[]).filter(o=>+o.valor && !/veh/i.test(o.nombre)); /* los vehículos no aportan para el banco */
+  const vInm = inm.reduce((s,x)=>s+x.valor,0), hip = inm.reduce((s,x)=>s+x.hipoteca,0), pasivos = +P_.pasivos||0;
+  const financiero = fondos.reduce((s,f)=>s+f.valor,0) + liq + otros.reduce((s,o)=>s+(+o.valor),0);
+  const bruto = vInm + fondos.reduce((s,f)=>s+f.valor,0) + liq + otros.reduce((s,o)=>s+(+o.valor),0), deuda = hip + pasivos;
+  return {per, inm, nominas, otrosIng, alqB, alqG, cuotas, ingresos, fondos, liq, otros, vInm, hip, pasivos, financiero, bruto, deuda,
+    neto: bruto-deuda, tasa: ingresos? cuotas/ingresos : 0, ltv: vInm? hip/vInm : 0, disponible: liq + fondos.reduce((s,f)=>s+f.valor,0)};
+}
+
+function renderBanco(){
+  const B = datosBanco(), hoyTxt = new Date().toLocaleDateString("es-ES",{day:"numeric",month:"long",year:"numeric"});
+  // capacidad (solo pantalla)
+  const mx=(+$("bkMax").value||35)/100, ti=(+$("bkTipo").value||0)/1200, n=(+$("bkPlazo").value||25)*12, ent=+$("bkEntrada").value||0;
+  const cuotaMax = Math.max(0, B.ingresos*mx - B.cuotas), prestamo = ti ? cuotaMax*(1-Math.pow(1+ti,-n))/ti : cuotaMax*n;
+  $("bkCap").innerHTML = [
+    ["Cuota mensual adicional asumible", eur(cuotaMax), `${pct(mx,0)} de ${eur(B.ingresos)} de ingresos − ${eur(B.cuotas)} de cuotas actuales`],
+    ["Préstamo máximo aproximado", eur(prestamo), `A ${$("bkPlazo").value} años al ${$("bkTipo").value} %`],
+    ...(ent ? [["Precio de compra orientativo", eur(prestamo+ent), `Préstamo + entrada (antes de impuestos y gastos, ~10-12 %)`]] : []),
+    ["Liquidez + fondos disponibles", eur(B.disponible), "Para entrada, impuestos y gastos de compra"],
+  ].map(kpiCard).join("");
+
+  if(!B.per.length){
+    $("hoja").innerHTML = `<div style="padding:30mm 10mm;text-align:center;color:#555;font-size:11pt"><b>No hay datos de los titulares.</b><br><br>
+      ${D.fuente==="propio" ? "Ve a Datos → «Titulares (para el banco)» y pulsa «Copiar titulares y documentación del Excel», o rellénalos allí."
+        : "Rellena los datos de los titulares en la hoja «Situación financiera» del Excel."}<br><br>Sin ellos el PDF no sirve para el banco.</div>`;
+    return;
+  }
+  const fila = (l, v, cls="") => `<tr class="${cls}"><td>${l}</td><td>${v}</td></tr>`;
+  const val = v => v==null||v==="" ? "—" : esc(v);
+  const campos = [["Nombre y apellidos",p=>`<b>${val(p.nombre)}</b>`],
+    ["DNI / NIE · Nacimiento",p=>`${val(p.dni)} · ${p.nacimiento?`${fmtDate(p.nacimiento)} (${edad(p.nacimiento)} años)`:"—"}`],
+    ["Estado civil",p=>val(p.estado_civil)],["Email · Teléfono",p=>`${val(p.email)} · ${val(p.movil)}`],["Estudios",p=>val(p.estudios)],
+    ["Empresa · Puesto",p=>`${val(p.empresa)} · ${val(p.puesto)}`],["Contrato · Antigüedad",p=>`${val(p.contrato)} · ${antiguedad(p.fecha_alta)}`],
+    ["Salario bruto anual · Neto mensual",p=>`<b>${p.bruto_anual?eur(+p.bruto_anual):"—"}</b> · ${p.neto_mes?eur(+p.neto_mes)+" (12 pagas)":"—"}`]];
+  const nombres = B.per.map(p=>p.nombre).filter(Boolean);
+  $("hoja").innerHTML = `
+    <div class="h-top"><div><h1>Resumen financiero de los solicitantes</h1><div class="h-sub">${nombres.map(esc).join(" y ")||"—"}</div></div>
+      <div class="h-sub" style="text-align:right">A ${hoyTxt}</div></div>
+    <div class="kp">
+      <div><span>Ingresos netos / mes</span><b>${eur(B.ingresos)}</b></div>
+      <div><span>Cuotas actuales / mes</span><b>${eur(B.cuotas)}</b></div>
+      <div><span>Tasa de esfuerzo</span><b>${pct(B.tasa)}</b></div>
+      <div><span>Patrimonio neto</span><b>${eur(B.neto)}</b></div>
+      <div><span>Deuda total · LTV</span><b>${eur(B.deuda)}</b><span>LTV ${pct(B.ltv)}</span></div>
+      <div><span>Liquidez + fondos</span><b>${eur(B.disponible)}</b></div>
+    </div>
+    <h3>Titulares</h3>
+    <table class="tit"><tr><th></th>${B.per.map((p,i)=>`<th>Titular ${i+1}</th>`).join("")}</tr>
+      ${campos.map(([l,f])=>`<tr><td>${l}</td>${B.per.map(p=>`<td>${f(p)}</td>`).join("")}</tr>`).join("")}</table>
+    <div class="cols">
+      <div><h3>Ingresos mensuales</h3><table>
+        ${B.per.map(p=>fila("Nómina neta · "+esc(String(p.nombre||"").split(/\s+/)[0]), eur(+p.neto_mes||0))).join("")}
+        ${B.otrosIng?fila("Otros ingresos",eur(B.otrosIng)):""}
+        ${fila("Alquileres (bruto)",eur(B.alqB))}${fila("Gastos de los inmuebles alquilados",eur(-B.alqG))}
+        ${fila("Total ingresos netos",eur(B.ingresos),"t")}${fila("Ingresos netos anuales",eur(B.ingresos*12))}</table>
+      <h3>Endeudamiento</h3><table>
+        ${B.inm.filter(x=>x.hipoteca||x.cuota).map(x=>fila("Hipoteca · "+esc(x.nombre),`${eur(x.cuota)}/mes · pendiente ${eur(x.hipoteca)}`)).join("") || fila("Hipotecas","Ninguna")}
+        ${fila("Préstamos personales",B.pasivos?eur(B.pasivos):"Ninguno")}${fila("Tarjetas de crédito (dispuesto)","0 €")}
+        ${fila("Total cuotas mensuales",eur(B.cuotas),"t")}${fila("Tasa de esfuerzo actual",pct(B.tasa))}
+        ${fila("Deuda pendiente total",B.deuda?eur(B.deuda):"Ninguna")}
+        ${fila("Deuda total equivale a",B.ingresos?`${(B.deuda/(B.ingresos*12)).toFixed(1).replace(".",",")} años de ingresos netos`:"—")}</table></div>
+      <div><h3>Activos financieros y otros bienes</h3><table>
+        ${B.fondos.map(f=>fila("Fondos de inversión · "+esc(String(f.nombre).split(/\s+/)[0]),eur(f.valor))).join("")}
+        ${B.liq?fila("Saldo en cuentas bancarias",eur(B.liq)):""}
+        ${B.otros.map(o=>fila(esc(o.nombre),eur(+o.valor))).join("")}
+        ${fila("Total",eur(B.disponible+B.otros.reduce((s,o)=>s+(+o.valor),0)),"t")}</table>
+      <h3>Situación patrimonial</h3><table>
+        ${fila("Inmuebles (valor estimado)",eur(B.vInm))}${fila("Activos financieros y otros bienes",eur(B.bruto-B.vInm))}
+        ${fila("Patrimonio bruto",eur(B.bruto),"t")}${fila("Deuda total",eur(-B.deuda))}
+        ${fila("Patrimonio neto",eur(B.neto),"t")}${fila("LTV de los inmuebles (deuda / valor)",pct(B.ltv))}</table></div>
+    </div>
+    <h3>Inmuebles</h3>
+    <table class="inm"><tr><th>Inmueble</th><th>Uso</th><th>Titularidad</th><th>Valor</th><th>Hipoteca pendiente</th><th>Cuota/mes</th><th>Alquiler/mes</th></tr>
+      ${B.inm.map(x=>`<tr><td>${esc(x.nombre)}</td><td>${esc(x.situacion||"")}</td><td>${esc(x.propiedad||"")}</td><td>${eur(x.valor)}</td><td>${x.hipoteca?eur(x.hipoteca):"—"}</td><td>${x.cuota?eur(x.cuota):"—"}</td><td>${x.alquiler?eur(x.alquiler):"—"}</td></tr>`).join("")}
+      <tr class="t"><td>Total</td><td></td><td></td><td>${eur(B.vInm)}</td><td>${eur(B.hip)}</td><td>${eur(B.cuotas)}</td><td>${eur(B.alqB)}</td></tr></table>
+    ${(D.documentacion||[]).length?`<h3>Documentación disponible</h3><ul class="doc">${D.documentacion.map(d=>`<li>${esc(d)}</li>`).join("")}</ul>`:""}
+    <div class="pie">Valores de los inmuebles estimados por los titulares. Fondos de inversión a valor de mercado del ${fmtDate(E.hoy)}. No incluye las inversiones a nombre de los hijos. Documento informativo elaborado por los titulares.</div>`;
+}
+function exportarPdf(){
+  const t = document.title;
+  document.title = `Resumen financiero - ${(D.personas||[]).map(p=>String(p.nombre||"").split(/\s+/)[0]).join(" y ")} - ${E.hoy}`;
+  addEventListener("afterprint", ()=>{ document.title = t; }, {once:true});
+  window.print();
+}
+
+// ============================================================ operaciones
+function renderOps(){
+  const w = SCOPES[state.scope], fs = FONDOS.filter(f=>w[f]);
+  $("aggSeg").innerHTML = ["Año","Trimestre","Mes"].map(a=>`<button class="${a===state.agg?"on":""}">${a}</button>`).join("");
+  $("aggSeg").querySelectorAll("button").forEach(b=>b.onclick=()=>{state.agg=b.textContent;renderOps()});
+  const key = o => state.agg==="Año"? o.fecha.slice(0,4) : state.agg==="Mes"? o.fecha.slice(0,7) : o.fecha.slice(0,4)+" T"+(Math.floor((+o.fecha.slice(5,7)-1)/3)+1);
+  const ops = E.ops.filter(o=>w[o.fondo]), labels = [...new Set(ops.map(key))].sort();
+  $("opsLegend").innerHTML = fs.map(f=>`<span><i class="dot" style="background:${col(f)}"></i>${esc(f)}${xN(w[f])}</span>`).join("");
+  mk("cAport",{type:"bar",data:{labels,datasets:fs.map(f=>({label:f,data:labels.map(l=>ops.filter(o=>o.fondo===f&&key(o)===l).reduce((s,o)=>s+o.importe*w[f],0)),backgroundColor:col(f),borderColor:css("--surface"),borderWidth:{top:2},borderRadius:0,borderSkipped:false,maxBarThickness:48}))},
+    options:{interaction:hover,scales:{x:{stacked:true,grid:{display:false}},y:{...axisEur,stacked:true}},
+      plugins:{tooltip:{filter:c=>c.parsed.y!==0,callbacks:{label:c=>` ${c.dataset.label}: ${eur(c.parsed.y)}`,footer:it=>"Total: "+eur(it.reduce((s,c)=>s+c.parsed.y,0))}}}}});
+  const fSel=$("fFondo"), aSel=$("fAnio"), fv=fSel.value, av=aSel.value;
+  fSel.innerHTML = `<option value="">Todos los activos</option>`+fs.map(f=>`<option>${esc(f)}</option>`).join(""); fSel.value = fs.includes(fv)?fv:"";
+  const anios=[...new Set(ops.map(o=>o.fecha.slice(0,4)))].sort().reverse();
+  aSel.innerHTML = `<option value="">Todos los años</option>`+anios.map(a=>`<option>${a}</option>`).join(""); aSel.value = anios.includes(av)?av:"";
+  const rows = ops.filter(o=>(!fSel.value||o.fondo===fSel.value)&&(!aSel.value||o.fecha.startsWith(aSel.value))).map(o=>{
+    const k=w[o.fondo], vh=o.part*E.F[o.fondo].pLast*k, imp=o.importe*k, g=vh-imp;
+    return {...o, k, imp, vh, g, r: imp>0? g/imp:null, tir: imp>0 && yearsBetween(o.fecha,E.hoy)>=1 ? xirr([{d:o.fecha,v:-imp},{d:E.hoy,v:vh}]) : null};
+  });
+  const sk = state.sortK||"fecha", sd = state.sortD||-1;
+  rows.sort((a,b)=>((a[sk]??-1e9)>(b[sk]??-1e9)?1:(a[sk]??-1e9)<(b[sk]??-1e9)?-1:0)*sd);
+  const tot = rows.reduce((s,r)=>({imp:s.imp+r.imp,vh:s.vh+r.vh}),{imp:0,vh:0});
+  $("opsSub").textContent = `${rows.length} operaciones · ${eur(tot.imp)} aportados · valen hoy ${eur(tot.vh)} (${pctS((tot.vh-tot.imp)/tot.imp)})${Object.values(w).some(k=>k>1)?" · ×2 = importe de las dos carteras idénticas":""}`;
+  const th = (k,l,c="") => `<th class="sort ${c}" data-k="${k}">${l}${sk===k?(sd>0?" ▲":" ▼"):""}</th>`;
+  $("tOps").innerHTML = `<tr>${th("fecha","Fecha")}${th("fondo","Activo","l")}<th class="l">Titular</th>${th("imp","Importe")}${th("precio","Precio")}${th("part","Particip.")}${th("vh","Valor hoy")}${th("g","Beneficio")}${th("r","Rentab.")}${th("tir","TIR anual")}</tr>`
+    + rows.map(r=>`<tr><td>${fmtDate(r.fecha)}</td><td class="l"><i class="dot" style="background:${col(r.fondo)}"></i>${esc(r.fondo)}</td><td class="l">${esc(titTxt(r.fondo))}${xN(r.k)}</td><td>${eur(r.imp,2)}</td><td>${nf2.format(r.precio)} €</td><td>${nf2.format(r.part*r.k)}</td><td>${eur(r.vh,2)}</td>
+      <td class="${cls(r.g)}">${r.imp>0?eurS(r.g):"–"}</td><td class="${cls(r.r)}">${pctS(r.r)}</td><td class="${cls(r.tir)}">${r.tir==null?"<span style='color:var(--text-3)'>&lt;1 año</span>":pctS(r.tir)}</td></tr>`).join("");
+  $("tOps").querySelectorAll("th.sort").forEach(t=>t.onclick=()=>{ const k=t.dataset.k; state.sortD = state.sortK===k? -state.sortD : -1; state.sortK=k; renderOps(); });
+}
+
+// ============================================================ datos (editor)
+function setDirty(v){ dirty=v; $("savebar").classList.toggle("show",v); }
+async function cargarPropio(){ P = await (await fetch("/api/propio",{cache:"no-store"})).json(); setDirty(false); }
+async function post(url, body){
+  const r = await fetch(url,{method:"POST",headers:{"Content-Type":"application/json","X-Dashboard":"1"},body:JSON.stringify(body||{})});
+  const j = await r.json(); if(!r.ok||j.error) throw new Error(j.error||r.statusText); return j;
+}
+
+// Tabla editable genérica: cols [{k, l, t:'text'|'num'|'date'|'sel'|'list'|'pct', opts, w}]
+function tablaEd(el, cols, rows, {orden, acciones}={}){
+  const vista = orden ? orden(rows) : rows;
+  const inp = (c, r, j) => {
+    const v = r[c.k], st = c.w?` style="min-width:${c.w}px"`:"";
+    if(c.t==="sel") return `<select data-j="${j}" data-k="${c.k}"${st}>${(c.opts||[]).map(o=>`<option ${o===v?"selected":""}>${esc(o)}</option>`).join("")}${c.opts?.includes(v)||v==null?"":`<option selected>${esc(v)}</option>`}</select>`;
+    const val = c.t==="list" ? (v||[]).join(", ") : c.t==="pct" ? (v==null?"":+(v*100).toFixed(4)) : (v??"");
+    return `<input data-j="${j}" data-k="${c.k}" class="${c.t==="num"||c.t==="pct"?"n":""}" type="${c.t==="date"?"date":c.t==="num"||c.t==="pct"?"number":"text"}" step="any" value="${esc(val)}"${st}>`;
+  };
+  el.innerHTML = `<tr>${cols.map(c=>`<th class="${c.t==="num"||c.t==="pct"?"":"l"}">${c.l}</th>`).join("")}<th></th></tr>`
+    + vista.map((r,j)=>`<tr>${cols.map(c=>`<td>${inp(c,r,j)}</td>`).join("")}<td class="x">${acciones?acciones(r,j):""}<button class="del" data-del="${j}" title="Eliminar">✕</button></td></tr>`).join("");
+  el.querySelectorAll("[data-k]").forEach(i=>i.addEventListener(i.tagName==="SELECT"?"change":"input",()=>{
+    const r = vista[+i.dataset.j], c = cols.find(c=>c.k===i.dataset.k);
+    r[c.k] = c.t==="num" ? (i.value===""?null:+i.value) : c.t==="pct" ? (i.value===""?null:+i.value/100) : c.t==="list" ? i.value.split(",").map(s=>s.trim()).filter(Boolean) : i.value;
+    setDirty(true);
+  }));
+  el.querySelectorAll("[data-del]").forEach(b=>b.onclick=()=>{ const r=vista[+b.dataset.del]; if(!confirm("¿Eliminar esta fila?")) return; rows.splice(rows.indexOf(r),1); setDirty(true); renderDatos(); });
+}
+
+function renderDatos(){
+  if(!P) return;
+  const fuente = P.config.fuente;
+  $("fuenteSeg").innerHTML = [["excel","Excel"],["propio","Dashboard"]].map(([k,l])=>`<button data-f="${k}" class="${fuente===k?"on":""}">${l}</button>`).join("");
+  $("fuenteSeg").querySelectorAll("button").forEach(b=>b.onclick=()=>cambiarFuente(b.dataset.f));
+  $("fuenteInfo").innerHTML = fuente==="excel"
+    ? `Ahora los datos salen del <b>Excel</b> (se relee en cada actualización${D?.excel_modificado?`; guardado el ${fmtDate(D.excel_modificado.slice(0,10))} ${D.excel_modificado.slice(11)}`:""}). El dashboard tiene guardadas ${P.operaciones.length} operaciones propias.`
+    : `Ahora los datos salen del <b>dashboard</b> (datos.json): ${P.operaciones.length} operaciones. El Excel ya no se usa.`;
+  filasFondos();
+  tablaEd($("edFondos"), [{k:"clave",l:"Nombre corto",w:110},{k:"nombre",l:"Nombre completo",w:220},{k:"isin",l:"ISIN",w:120},{k:"simbolo",l:"Símbolo precio",w:120},
+    {k:"titulares",l:"Titulares",t:"list",w:120},{k:"tipo",l:"Tipo",w:140},{k:"historico",l:"Símbolo histórico (opcional)",w:90}], P._fondos,
+    {acciones:(r,j)=>`<button class="btn sm" data-buscar="${j}" title="Buscar símbolo por ISIN">Buscar</button>`});
+  $("edFondos").querySelectorAll("[data-buscar]").forEach(b=>b.onclick=()=>buscarIsin(P._fondos[+b.dataset.buscar]));
+  if(document.activeElement!==$("edGrupos")) $("edGrupos").value = Object.entries(P.grupos||{}).map(([g,ps])=>`${g}: ${ps.join(", ")}`).join("\n");
+
+  const editable = fuente==="propio";
+  renderWeb();
+  renderPersonasEd(editable);
+  renderPisosEd(editable);
+  $("edPropio").style.display = editable ? "" : "none";
+  $("edLock").style.display = editable ? "none" : "";
+  $("edLock").innerHTML = `Las operaciones, el patrimonio, los alquileres y los objetivos se están leyendo del Excel, así que se editan allí.
+    Si quieres dejar el Excel: pulsa <b>«Copiar todos los datos del Excel al dashboard»</b> y después cambia el origen a <b>Dashboard</b>. A partir de ahí lo editas todo aquí.`;
+  if(!editable) return;
+
+  const nombres = P._fondos.map(f=>f.clave);
+  $("opFo").innerHTML = nombres.map(n=>`<option>${esc(n)}</option>`).join("");
+  tablaEd($("edOps"), [{k:"fecha",l:"Fecha",t:"date"},{k:"fondo",l:"Fondo",t:"sel",opts:nombres},{k:"importe",l:"Importe €",t:"num"},{k:"precio",l:"Precio",t:"num"},{k:"part",l:"Participaciones",t:"num"}],
+    P.operaciones, {orden: rows=>rows.slice().sort((a,b)=>(b.fecha||"").localeCompare(a.fecha||""))});
+  const pa = P.patrimonio;
+  tablaEd($("edInm"), [{k:"nombre",l:"Inmueble",w:180},{k:"situacion",l:"Situación",w:110},{k:"propiedad",l:"Propiedad",w:90},{k:"valor",l:"Valor",t:"num"},{k:"hipoteca",l:"Hipoteca pendiente",t:"num"},
+    {k:"cuota",l:"Cuota/mes",t:"num"},{k:"alquiler",l:"Alquiler/mes",t:"num"},{k:"gastos",l:"Gastos/mes",t:"num"}], pa.inmuebles);
+  tablaEd($("edLiq"), [{k:"banco",l:"Entidad"},{k:"saldo",l:"Saldo €",t:"num"}], pa.liquidez);
+  tablaEd($("edOtros"), [{k:"nombre",l:"Activo"},{k:"valor",l:"Valor €",t:"num"}], pa.otros);
+  for(const [id,k] of [["edNom","nominas"],["edOtrI","otros_ingresos"],["edPas","pasivos"]]){ const i=$(id); i.value = pa[k]??""; i.oninput=()=>{pa[k]=+i.value||0;setDirty(true)}; }
+  tablaEd($("edAlq"), [{k:"anio",l:"Año",t:"num"},{k:"casa",l:"Inmueble",w:160},{k:"cashflow",l:"Cashflow anual €",t:"num"},{k:"rent",l:"Rentabilidad %",t:"pct"}], P.alquileres,
+    {orden: rows=>rows.slice().sort((a,b)=>(b.anio-a.anio)||String(a.casa).localeCompare(b.casa))});
+  // objetivos
+  $("edObj").innerHTML = P.objetivos.map((o,k)=>`<div class="card mt" style="background:var(--surface-2)">
+      <div class="form"><label class="f">Fondo<select data-o="${k}" data-ok="fondo">${nombres.map(n=>`<option ${n===o.fondo?"selected":""}>${esc(n)}</option>`).join("")}</select></label>
+      <label class="f" style="grid-column:span 2">Descripción<input data-o="${k}" data-ok="plan" value="${esc(o.plan)}"></label>
+      <button class="btn sm" data-gen="${k}">Generar plan…</button><button class="btn sm" data-delobj="${k}">Eliminar objetivo</button></div>
+      <div class="tw"><table class="ed" id="edObjT${k}"></table></div><button class="btn sm mt" data-addfila="${k}">+ Añadir año</button></div>`).join("");
+  P.objetivos.forEach((o,k)=>tablaEd($("edObjT"+k), [{k:"anio",l:"Año",t:"num"},{k:"estimacion",l:"Valor previsto €",t:"num"}], o.filas));
+  $("edObj").querySelectorAll("[data-ok]").forEach(i=>i.addEventListener(i.tagName==="SELECT"?"change":"input",()=>{P.objetivos[+i.dataset.o][i.dataset.ok]=i.value;setDirty(true)}));
+  $("edObj").querySelectorAll("[data-addfila]").forEach(b=>b.onclick=()=>{const f=P.objetivos[+b.dataset.addfila].filas; f.push({anio:(f.at(-1)?.anio||new Date().getFullYear())+1,estimacion:null}); setDirty(true); renderDatos();});
+  $("edObj").querySelectorAll("[data-delobj]").forEach(b=>b.onclick=()=>{ if(!confirm("¿Eliminar el objetivo?")) return; P.objetivos.splice(+b.dataset.delobj,1); setDirty(true); renderDatos();});
+  $("edObj").querySelectorAll("[data-gen]").forEach(b=>b.onclick=()=>{
+    const o = P.objetivos[+b.dataset.gen];
+    const q = prompt("Año inicio; capital inicial €; aportación anual €; rentabilidad %; año final\n(ej.: 2021; 10000; 2000; 7; 2036)", `${new Date().getFullYear()}; 10000; 2000; 7; ${new Date().getFullYear()+15}`);
+    if(!q) return; const [a0,c0,ap,r,a1] = q.split(";").map(s=>+s.trim().replace(",","."));
+    if([a0,c0,ap,r,a1].some(isNaN)) return alert("Formato no válido");
+    let c=c0; o.filas=[]; for(let a=a0;a<=a1;a++){ c = (a===a0? c0 : c*(1+r/100)) + ap*(a===a0?0:1); o.filas.push({anio:a,estimacion:Math.round(c)}); }
+    o.plan = o.plan || `Aportar ${ap} €/año, partiendo de ${c0} €, al ${r} %`;
+    setDirty(true); renderDatos();
+  });
+}
+
+// Titulares para el banco: en modo Excel solo la fecha de alta (el resto se edita en el Excel)
+const CAMPOS_PER = [["nombre","Nombre y apellidos"],["dni","DNI / NIE"],["nacimiento","Fecha de nacimiento","date"],["estado_civil","Estado civil"],
+  ["email","Email"],["movil","Teléfono"],["estudios","Estudios"],["empresa","Empresa"],["puesto","Puesto"],["contrato","Tipo de contrato"],
+  ["fecha_alta","Fecha de alta en la empresa (antigüedad)","date"],["bruto_anual","Salario bruto anual €","number"],["neto_mes","Salario neto mensual € (12 pagas)","number"]];
+function renderPersonasEd(editable){
+  P.personas = P.personas||[]; P.personas_extra = P.personas_extra||{}; P.documentacion = P.documentacion||[];
+  const lista = editable ? P.personas : (D.personas||[]);
+  $("edPerSub").textContent = editable ? "Datos personales y laborales de cada titular."
+    : "Salen de la hoja «Situación financiera» del Excel (se editan allí). Aquí solo se añade la fecha de alta en la empresa, que el Excel no tiene.";
+  $("edPer").innerHTML = `<tr><th class="l">Dato</th>${lista.map((p,i)=>`<th class="l">Titular ${i+1}${editable?` <button class="del" data-delper="${i}" title="Eliminar titular">✕</button>`:""}</th>`).join("")}</tr>`
+    + CAMPOS_PER.map(([k,l,t])=>`<tr><td>${l}</td>${lista.map((p,i)=>{
+        const extra = k==="fecha_alta", v = extra ? (P.personas_extra[p.nombre]?.fecha_alta || p.fecha_alta || "") : (p[k]??"");
+        return `<td><input data-per="${i}" data-k="${k}" type="${t||"text"}" value="${esc(v)}" ${editable||extra?"":"disabled"} style="min-width:170px"></td>`; }).join("")}</tr>`).join("");
+  $("edPer").querySelectorAll("input[data-per]").forEach(inp=>inp.addEventListener("input",()=>{
+    const p = lista[+inp.dataset.per], k = inp.dataset.k, v = inp.type==="number" ? (inp.value===""?null:+inp.value) : inp.value;
+    if(k==="fecha_alta"){ (P.personas_extra[p.nombre] = P.personas_extra[p.nombre]||{}).fecha_alta = v; }
+    else { const antes = p.nombre; p[k] = v; if(k==="nombre" && P.personas_extra[antes]){ P.personas_extra[v]=P.personas_extra[antes]; delete P.personas_extra[antes]; } }
+    setDirty(true);
+  }));
+  $("edPer").querySelectorAll("[data-delper]").forEach(b=>b.onclick=()=>{ if(!confirm("¿Eliminar este titular?")) return; P.personas.splice(+b.dataset.delper,1); setDirty(true); renderDatos(); });
+  $("edPerBtns").style.display = editable ? "" : "none";
+  if(editable && !P.personas.length) $("edPerSub").innerHTML = "<b>No hay titulares en el dashboard.</b> Pulsa «Copiar titulares y documentación del Excel» o añádelos a mano.";
+  const doc = $("edDoc"); doc.disabled = !editable;
+  if(document.activeElement!==doc) doc.value = (editable ? P.documentacion : (D.documentacion||[])).join("\n");
+  doc.oninput = ()=>{ P.documentacion = doc.value.split("\n").map(s=>s.trim()).filter(Boolean); setDirty(true); };
+}
+
+// Versión web: estado y acciones
+async function renderWeb(info){
+  try{ info = info || await (await fetch("/api/web",{cache:"no-store"})).json(); }catch(e){ return; }
+  const partes = [];
+  if(!info.clave) partes.push("① Pon una contraseña. ② Pulsa «Publicar ahora» (la primera vez crea la web en tu GitHub).");
+  if(info.url) partes.push(`Dirección: <a href="${esc(info.url)}" target="_blank" rel="noopener">${esc(info.url)}</a>`);
+  if(info.ultima) partes.push(`Última subida: ${fmtDate(info.ultima.slice(0,10))} ${info.ultima.slice(11)}`);
+  if(info.publicando) partes.push("⏳ Publicando…");
+  if(info.mensaje && !info.publicando) partes.push(esc(info.mensaje));
+  if(info.error) partes.push(`<span class="down">⚠ ${esc(info.error)}</span>`);
+  $("webEstado").innerHTML = partes.join(" · ");
+  $("webActiva").checked = info.activa; $("webAuto").checked = info.autoarranque;
+  $("webPublicar").disabled = $("webVista").disabled = !info.clave || info.publicando;
+  if(info.publicando) setTimeout(()=>renderWeb(), 3000);
+}
+async function webAccion(btn, url, body, despues){
+  const t = btn.textContent; btn.disabled = true; btn.textContent = "⏳ "+t;
+  try{ const r = await post(url, body); await renderWeb(r.url!==undefined?r:null); if(despues) despues(r); }
+  catch(e){ alert(e.message); }
+  finally{ btn.textContent = t; btn.disabled = false; }
+}
+
+// Pisos: la configuración siempre es editable; las cifras solo en modo «Dashboard»
+function renderPisosEd(editable){
+  P.pisos = P.pisos || [];
+  const inmuebles = [...new Set([...(D?.patrimonio?.inmuebles||[]), ...(P.patrimonio?.inmuebles||[])].map(x=>x.nombre))];
+  $("edPisosSub").innerHTML = editable
+    ? "Todos los datos de cada piso se editan aquí. «Piso en Patrimonio» enlaza con la tabla de inmuebles (valor, hipoteca pendiente y alquiler de hoy)."
+    : "Los números salen de la hoja «Cuentas» de cada Excel (ruta relativa a la carpeta «Casas y LPF»). Aquí ajustas la fecha de compra, la propiedad, con qué inmueble de Patrimonio se enlaza y las amortizaciones anticipadas de hipoteca.";
+  const campo = (k,obj,key,l,t="text",extra="") => `<label class="f">${l}<input data-p="${k}" data-key="${key}" type="${t}" step="any" value="${esc(t==="pct"?"":obj[key]??"")}" ${extra}></label>`;
+  $("edPisos").innerHTML = P.pisos.map((p,k)=>{
+    p.hipoteca = p.hipoteca||{}; p.amortizaciones_extra = p.amortizaciones_extra||[];
+    const num = (key,l) => `<label class="f">${l}<input data-p="${k}" data-key="${key}" data-num="1" type="number" step="any" value="${esc(key.split(".").reduce((o,x)=>o?.[x],p)??"")}"></label>`;
+    return `<div class="card mt" style="background:var(--surface-2)">
+      <div class="card-h"><h2>${esc(p.nombre||"Piso nuevo")}</h2><button class="btn sm" data-delpiso="${k}">Eliminar piso</button></div>
+      <div class="form mt">
+        ${campo(k,p,"nombre","Nombre")}
+        ${editable?"":campo(k,p,"excel","Fichero Excel","text",'style="min-width:220px"')}
+        ${campo(k,{fecha_compra: p.fecha_compra || (D?.pisos||[]).find(x=>x.nombre===p.nombre)?.fecha_compra},"fecha_compra","Fecha de compra","date")}
+        ${campo(k,p,"propiedad","Propiedad (p. ej. 50% · 50%)")}
+        <label class="f">Piso en Patrimonio<select data-p="${k}" data-key="inmueble"><option value="">— ninguno —</option>${inmuebles.map(n=>`<option ${n===p.inmueble?"selected":""}>${esc(n)}</option>`).join("")}</select></label>
+      </div>
+      ${editable?`<h3>Compra e hipoteca</h3><div class="form">
+        ${num("precio","Precio de compra €")}${num("gastos_compra","ITP, notaría, gestoría, agencia €")}${num("reforma","Reforma y mobiliario €")}${num("otros_iniciales","Otras inversiones iniciales €")}
+        ${num("hipoteca.importe","Hipoteca €")}<label class="f">Tipo de interés %<input data-p="${k}" data-key="hipoteca.tipo" data-pct="1" type="number" step="any" value="${p.hipoteca.tipo!=null?+(p.hipoteca.tipo*100).toFixed(4):""}"></label>${num("hipoteca.plazo","Plazo (años)")}
+      </div><h3>Ficha y mercado</h3><div class="form">
+        ${num("sup_construida","Superficie construida m²")}${num("sup_util","Superficie útil m²")}${num("anio_construccion","Año de construcción")}
+        ${num("valor_idealista","Valor según Idealista €")}${num("alquiler_idealista","Alquiler de mercado €/mes")}
+      </div><h3>Ingresos y gastos por año (gastos en positivo)</h3><div class="tw"><table class="ed" id="edPisoAn${k}"></table></div>
+      <button class="btn sm mt" data-addanio="${k}">+ Añadir año</button>`:""}
+      <h3>Amortizaciones anticipadas de hipoteca</h3><table class="ed" id="edPisoAm${k}" style="max-width:420px"></table>
+      <button class="btn sm mt" data-addam="${k}">+ Añadir amortización</button></div>`;
+  }).join("");
+  P.pisos.forEach((p,k)=>{
+    if(editable) tablaEd($("edPisoAn"+k), [{k:"anio",l:"Año",t:"num"},...CONCEPTOS.map(([c,l])=>({k:c,l,t:"num"}))], p.anual=p.anual||[],
+      {orden: rows=>rows.slice().sort((a,b)=>b.anio-a.anio)});
+    tablaEd($("edPisoAm"+k), [{k:"fecha",l:"Fecha",t:"date"},{k:"importe",l:"Importe €",t:"num"}], p.amortizaciones_extra);
+  });
+  $("edPisos").querySelectorAll("[data-key]").forEach(i=>i.addEventListener(i.tagName==="SELECT"?"change":"input",()=>{
+    const p = P.pisos[+i.dataset.p], path = i.dataset.key.split("."), last = path.pop();
+    const obj = path.reduce((o,x)=>o[x]=o[x]||{}, p);
+    obj[last] = i.dataset.pct ? (i.value===""?null:+i.value/100) : i.dataset.num ? (i.value===""?null:+i.value) : i.value;
+    setDirty(true);
+  }));
+  $("edPisos").querySelectorAll("[data-delpiso]").forEach(b=>b.onclick=()=>{ if(!confirm("¿Eliminar este piso del dashboard?")) return; P.pisos.splice(+b.dataset.delpiso,1); setDirty(true); renderDatos(); });
+  $("edPisos").querySelectorAll("[data-addanio]").forEach(b=>b.onclick=()=>{ const a=P.pisos[+b.dataset.addanio].anual; a.push({anio:Math.max(new Date().getFullYear()-1,...a.map(r=>r.anio+1))}); setDirty(true); renderDatos(); });
+  $("edPisos").querySelectorAll("[data-addam]").forEach(b=>b.onclick=()=>{ P.pisos[+b.dataset.addam].amortizaciones_extra.push({fecha:E.hoy,importe:0}); setDirty(true); renderDatos(); });
+}
+
+async function buscarIsin(fila){
+  const q = (fila.isin||fila.nombre||"").trim(); if(!q) return alert("Escribe primero el ISIN");
+  $("resIsin").innerHTML = `<div class="note">Buscando ${esc(q)}…</div>`;
+  try{
+    const res = await (await fetch("/api/buscar?q="+encodeURIComponent(q))).json();
+    if(!res.length){ $("resIsin").innerHTML = `<div class="note">No he encontrado nada para ${esc(q)}.</div>`; return; }
+    $("resIsin").innerHTML = `<div class="note">Resultados para ${esc(q)} — elige preferiblemente uno en EUR con histórico largo:</div><table><tr><th class="l">Símbolo</th><th class="l">Nombre</th><th class="l">Bolsa</th><th class="l">Moneda</th><th>Precio</th><th>Días de histórico (400 d)</th><th></th></tr>`
+      + res.map((r,i)=>`<tr><td class="l">${esc(r.simbolo)}</td><td class="l">${esc(r.nombre)}</td><td class="l">${esc(r.bolsa)}</td><td class="l">${esc(r.moneda||"?")}</td><td>${r.precio!=null?nf2.format(r.precio):"–"}</td><td>${r.dias_historico??"–"}</td><td><button class="btn sm" data-usar="${i}">Usar</button></td></tr>`).join("") + `</table>`;
+    $("resIsin").querySelectorAll("[data-usar]").forEach(b=>b.onclick=()=>{ const r=res[+b.dataset.usar]; fila.simbolo=r.simbolo; if(!fila.nombre||fila.nombre===fila.clave) fila.nombre=r.nombre; setDirty(true); $("resIsin").innerHTML=""; renderDatos(); });
+  }catch(e){ $("resIsin").innerHTML = `<div class="note">Error buscando: ${esc(e.message)}</div>`; }
+}
+
+// fondos (objeto -> filas editables, conservando la clave original para poder renombrar)
+function filasFondos(){ if(!P._fondos) P._fondos = Object.entries(P.fondos).map(([k,v])=>({_orig:k, clave:k, ...v})); return P._fondos; }
+
+function prepararGuardado(){
+  filasFondos();
+  const fondos = {}, renombres = {};
+  for(const f of P._fondos){
+    const k = (f.clave||"").trim(); if(!k) throw new Error("Hay un fondo sin nombre corto");
+    if(fondos[k]) throw new Error(`El fondo «${k}» está repetido`);
+    const {_orig, clave, ...resto} = f;
+    for(const c of ["precio","hora","hist","moneda","bolsa","en_vivo","hist_aproximado"]) delete resto[c];
+    if(!resto.historico) delete resto.historico;
+    fondos[k] = resto; if(_orig && _orig!==k) renombres[_orig]=k;
+  }
+  for(const o of P.operaciones) if(renombres[o.fondo]) o.fondo = renombres[o.fondo];
+  for(const o of P.objetivos) if(renombres[o.fondo]) o.fondo = renombres[o.fondo];
+  let grupos = {};
+  if(!$("edGrupos").value.trim()) grupos = P.grupos||{};
+  for(const lin of $("edGrupos").value.split("\n")){ const [g,ps] = lin.split(":"); if(g?.trim() && ps) grupos[g.trim()] = ps.split(",").map(s=>s.trim()).filter(Boolean); }
+  for(const o of P.operaciones){
+    if(!o.fecha || !o.fondo) throw new Error("Hay una operación sin fecha o sin fondo");
+    o.importe = +o.importe||0; o.precio = +o.precio||null; o.part = +o.part||0;
+  }
+  const {_fondos, ...limpio} = P;
+  return {...limpio, fondos, grupos};
+}
+async function guardar(){
+  try{ const datos = prepararGuardado(); await post("/api/propio", datos); P._fondos=null; await cargarPropio(); await cargar(); renderDatos(); }
+  catch(e){ alert("No se ha guardado: "+e.message); }
+}
+async function cambiarFuente(f){
+  if(f===P.config.fuente) return;
+  if(dirty && !confirm("Tienes cambios sin guardar; se guardarán también. ¿Continuar?")) return;
+  if(f==="propio" && !P.operaciones.length){
+    if(!confirm("El dashboard todavía no tiene datos propios. ¿Copio ahora todos los datos del Excel?")) return;
+    await post("/api/importar-excel"); await cargarPropio();
+  }
+  P.config.fuente = f; await guardar();
+}
+
+// ============================================================ orquestación
+const RENDER = {resumen:renderResumen, rentab:renderRentab, fondos:renderFondos, grupo:renderGrupo, objetivos:renderObjetivos, compara:renderCompara, patrimonio:renderPatrimonio, pisos:renderPisos, banco:renderBanco, ops:renderOps, datos:renderDatos};
+function render(){
+  if(!E) return;
+  if(state.tab==="grupo" && !Object.keys(GRUPOS).length) state.tab="resumen";
+  document.querySelectorAll("#tabs button").forEach(b=>b.classList.toggle("on",b.dataset.t===state.tab));
+  document.querySelectorAll("section.tab").forEach(s=>s.classList.toggle("on",s.id==="t-"+state.tab));
+  const sinScope = ["datos","patrimonio","pisos","banco","fondos","grupo"].includes(state.tab);
+  $("scopeSeg").style.display = sinScope ? "none" : "";
+  $("scopeSeg").innerHTML = Object.keys(SCOPES).map(k=>`<button class="${k===state.scope?"on":""}">${esc(k)}</button>`).join("");
+  $("scopeSeg").querySelectorAll("button").forEach(b=>b.onclick=()=>{state.scope=b.textContent;store.set("scope",state.scope);render()});
+  $("rangeSeg").innerHTML = ["6M","1A","3A","Todo"].map(r=>`<button class="${r===state.range?"on":""}">${r}</button>`).join("");
+  $("rangeSeg").querySelectorAll("button").forEach(b=>b.onclick=()=>{state.range=b.textContent;render()});
+  try { RENDER[state.tab](); } catch(e){ console.error(e); banner("Error al dibujar: "+esc(e.message)); }
+}
+function banner(html){ const b=$("banner"); b.innerHTML=html; b.classList.toggle("show",!!html); }
+
+// ============================================================ versión web (cifrada, solo lectura)
+const b64 = s => Uint8Array.from(atob(s), c=>c.charCodeAt(0));
+let llaveWeb = null;
+async function derivarLlave(clave, sal, iter){
+  const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(clave), "PBKDF2", false, ["deriveKey"]);
+  return crypto.subtle.deriveKey({name:"PBKDF2", salt:b64(sal), iterations:iter, hash:"SHA-256"}, base, {name:"AES-GCM", length:256}, true, ["decrypt"]);
+}
+async function descifrar(paq, llave){
+  const plano = await crypto.subtle.decrypt({name:"AES-GCM", iv:b64(paq.iv)}, llave, b64(paq.datos));
+  return JSON.parse(await new Response(new Blob([plano]).stream().pipeThrough(new DecompressionStream("gzip"))).text());
+}
+async function datosWeb(){
+  const paq = await (await fetch("datos.enc.json?t="+Date.now(),{cache:"no-store"})).json();
+  if(paq.version && paq.version!==VERSION_WEB && new URLSearchParams(location.search).get("v")!==paq.version){
+    location.replace(location.pathname+"?v="+paq.version); /* página guardada en caché: carga la nueva */
+    return new Promise(()=>{});
+  }
+  if(!llaveWeb){ // ¿recordada en este dispositivo?
+    const g = store.get("llave_web", null);
+    if(g && g.sal===paq.sal) llaveWeb = await crypto.subtle.importKey("raw", b64(g.k), "AES-GCM", true, ["decrypt"]);
+  }
+  if(!llaveWeb) return pedirClave(paq);
+  try { return await descifrar(paq, llaveWeb); }
+  catch(e){ llaveWeb=null; store.set("llave_web",null); return pedirClave(paq); }
+}
+function pedirClave(paq){
+  $("cargando").style.display="none"; $("login").style.display="flex"; $("lgClave").focus();
+  return new Promise(res=>{
+    $("lgForm").onsubmit = async ev => {
+      ev.preventDefault(); $("lgError").textContent=""; $("lgBtn").disabled=true; $("lgBtn").textContent="Comprobando…";
+      try{
+        const ll = await derivarLlave($("lgClave").value, paq.sal, paq.iter);
+        const d = await descifrar(paq, ll);
+        llaveWeb = ll;
+        if($("lgRecordar").checked){ const raw = new Uint8Array(await crypto.subtle.exportKey("raw", ll)); store.set("llave_web",{sal:paq.sal,k:btoa(String.fromCharCode(...raw))}); }
+        $("lgClave").value=""; $("login").style.display="none"; res(d);
+      }catch(e){ $("lgError").textContent = "Contraseña incorrecta"; }
+      finally{ $("lgBtn").disabled=false; $("lgBtn").textContent="Entrar"; }
+    };
+  });
+}
+
+async function cargar(){
+  $("btnRefresh").disabled = true; $("btnRefresh").textContent = "⟳ Actualizando…";
+  const lento = setTimeout(()=>{ if(!D) $("cargando").innerHTML = "Sigue cargando… La descarga de precios está tardando más de lo normal (¿conexión a internet lenta?).<br>Si en un minuto no aparece nada, cierra la ventana negra y vuelve a abrir «Abrir Dashboard.bat»."; }, 15000);
+  try{
+    let d;
+    if(MODO_WEB) d = await datosWeb();
+    else { const r = await fetch("/api/datos",{cache:"no-store"}); d = await r.json(); }
+    if(d.error) throw new Error(d.error);
+    D = d; configurar(); E = motor(D);
+    if(!P && !MODO_WEB) await cargarPropio();
+    $("cargando").style.display="none";
+    const horas = FONDOS.map(f=>D.fondos[f]?.hora).filter(Boolean).sort();
+    const pub = new Date(D.publicado||D.generado);
+    $("meta").innerHTML = MODO_WEB
+      ? `Datos del ${pub.toLocaleString("es-ES",{dateStyle:"short",timeStyle:"short"})} (última vez que el PC actualizó la web) · solo lectura · <a href="#" id="btnSalir" style="color:inherit">Salir</a>`
+      : `Precios de internet: última cotización ${horas.length? fmtDate(horas.at(-1).slice(0,10))+" "+horas.at(-1).slice(11):"–"} · comprobado ${new Date(D.generado).toLocaleTimeString("es-ES",{timeStyle:"short"})} · datos: <b>${D.fuente==="excel"?"Excel":"Dashboard"}</b>`;
+    if(MODO_WEB) $("btnSalir").onclick = ev => { ev.preventDefault(); store.set("llave_web",null); llaveWeb=null; location.reload(); };
+    const avisos = [...(D.avisos||[])];
+    if(MODO_WEB && (Date.now()-pub)/dayMs > 3) avisos.push(`ℹ Estos datos son de hace ${Math.floor((Date.now()-pub)/dayMs)} días: el PC no ha actualizado la web desde entonces.`);
+    if(D.errores_precio?.length) avisos.push("⚠ No he podido descargar algunos precios; uso el último guardado: "+D.errores_precio.map(e=>esc(e.split(":")[0])).join(", "));
+    if(!MODO_WEB && D.fuente==="excel" && D.excel_origen==="excel_abierto") avisos.push("ℹ El Excel está abierto: leo lo que tienes en pantalla (incluidos cambios sin guardar).");
+    if(D.fuente==="excel" && D.excel_origen==="copia_anterior") avisos.push("⚠ No he podido leer el Excel (bloqueado). Muestro la última lectura.");
+    const desconocidos = [...new Set(D.operaciones.map(o=>o.fondo).filter(f=>!FONDOS.includes(f)))];
+    if(desconocidos.length) avisos.push("⚠ Hay operaciones de fondos que no están en el catálogo (añádelos en Datos → Fondos): "+desconocidos.map(esc).join(", "));
+    const sinTit = FONDOS.filter(f=>!TIT[f].length);
+    if(sinTit.length) avisos.push("⚠ Fondos sin titular (añádelo en Datos → Fondos): "+sinTit.map(esc).join(", "));
+    banner(avisos.join("<br>"));
+    render();
+  }catch(e){
+    $("cargando").style.display="";
+    $("cargando").innerHTML = "No se pudo cargar: "+esc(e.message)+(MODO_WEB ? "" : "<br><br>Abre el dashboard con «Abrir Dashboard.bat» (no abriendo el .html directamente).");
+  }finally{ clearTimeout(lento); $("btnRefresh").disabled=false; $("btnRefresh").textContent="⟳ Actualizar"; }
+}
+
+// eventos
+document.querySelectorAll("#tabs button").forEach(b=>b.onclick=()=>{state.tab=b.dataset.t;render();window.scrollTo(0,0)});
+$("btnRefresh").onclick = cargar;
+$("btnTheme").onclick = ()=>{ const cur = document.documentElement.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
+  const nx = cur==="dark"?"light":"dark"; document.documentElement.dataset.theme=nx; store.set("theme",nx); setupChartDefaults(); render(); };
+["simCap","simAp","simSub","simR","simY","simI","simObj"].forEach(id=>$(id).addEventListener("input",renderSim));
+["fiG","fiR","fiScope"].forEach(id=>$(id).addEventListener("input",renderFI));
+["cmpDep","cmpIpc"].forEach(id=>$(id).addEventListener("input",renderCompara));
+$("rf").addEventListener("input",renderRentab);
+["vPrecio","vGastos","vPlusv","vAmortF"].forEach(id=>$(id).addEventListener("input",()=>renderVenta()));
+$("fFondo").addEventListener("change",renderOps); $("fAnio").addEventListener("change",renderOps);
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change",()=>{setupChartDefaults();render()});
+// editor
+$("btnGuardar").onclick = guardar;
+$("btnDescartar").onclick = async ()=>{ if(!confirm("¿Descartar los cambios?")) return; P=null; await cargarPropio(); renderDatos(); };
+$("edGrupos").addEventListener("input",()=>setDirty(true));
+$("addFondo").onclick = ()=>{ P._fondos.push({clave:"",nombre:"",isin:"",simbolo:"",titulares:[],tipo:""}); setDirty(true); renderDatos(); };
+$("addInm").onclick = ()=>{ P.patrimonio.inmuebles.push({nombre:"",situacion:"",propiedad:"",valor:0,hipoteca:0,cuota:0,alquiler:0,gastos:0}); setDirty(true); renderDatos(); };
+$("addLiq").onclick = ()=>{ P.patrimonio.liquidez.push({banco:"",saldo:0}); setDirty(true); renderDatos(); };
+$("addOtro").onclick = ()=>{ P.patrimonio.otros.push({nombre:"",valor:0}); setDirty(true); renderDatos(); };
+$("addAlq").onclick = ()=>{ P.alquileres.push({anio:new Date().getFullYear(),casa:"",cashflow:0,rent:null}); setDirty(true); renderDatos(); };
+$("impPer").onclick = async ()=>{
+  if(P.personas?.length && !confirm("Se sustituyen los titulares y la documentación del dashboard por los de la hoja «Situación financiera». ¿Continuar?")) return;
+  try{ const r = await post("/api/importar-personas"); P=null; await cargarPropio(); await cargar(); renderDatos(); alert(`Copiados ${r.personas} titulares del Excel.`); }
+  catch(e){ alert("Error: "+e.message); }
+};
+$("addPer").onclick =()=>{ (P.personas=P.personas||[]).push({nombre:""}); setDirty(true); renderDatos(); };
+$("addPiso").onclick =()=>{ (P.pisos=P.pisos||[]).push({nombre:"Piso nuevo",excel:"",hoja:"Cuentas",fecha_compra:"",propiedad:"",inmueble:"",amortizaciones_extra:[],
+  precio:0,gastos_compra:0,reforma:0,otros_iniciales:0,hipoteca:{importe:0,tipo:null,plazo:null},anual:[]}); setDirty(true); renderDatos(); };
+$("addObj").onclick =()=>{ P.objetivos.push({fondo:P._fondos[0]?.clave||"",plan:"",filas:[]}); setDirty(true); renderDatos(); };
+$("btnImportar").onclick = async ()=>{
+  if(P.operaciones.length && !confirm(`Esto sustituye las ${P.operaciones.length} operaciones, el patrimonio, los alquileres y los objetivos guardados en el dashboard por los del Excel (queda copia en /copias). ¿Continuar?`)) return;
+  try{ const r = await post("/api/importar-excel"); await cargarPropio(); renderDatos(); alert(`Copiadas ${r.operaciones} operaciones y el resto de datos del Excel.`); }
+  catch(e){ alert("Error: "+e.message); }
+};
+$("btnDescargar").onclick = ()=>{ const {_fondos,...d}=P; const a=document.createElement("a"); a.href=URL.createObjectURL(new Blob([JSON.stringify(d,null,1)],{type:"application/json"})); a.download=`inversiones_${iso(new Date())}.json`; a.click(); };
+// formulario rápido de operación: precio del día y participaciones automáticas
+const autoOp = (deImporte) => {
+  const f=$("opFo").value, fe=$("opF").value;
+  if(f && fe && !deImporte && !$("opP").dataset.manual){ const p=precioEn(f,fe); if(p) $("opP").value=+p.toFixed(4); }
+  const i=+$("opI").value, p=+$("opP").value; if(i && p && !$("opU").dataset.manual) $("opU").value=+(i/p).toFixed(6);
+};
+$("opF").addEventListener("input",()=>autoOp(false)); $("opFo").addEventListener("change",()=>autoOp(false)); $("opI").addEventListener("input",()=>autoOp(true));
+$("opP").addEventListener("input",()=>{ $("opP").dataset.manual=1; autoOp(true); }); $("opU").addEventListener("input",()=>{ $("opU").dataset.manual=1; });
+$("opAdd").onclick = ()=>{
+  const o = {fecha:$("opF").value, fondo:$("opFo").value, importe:+$("opI").value, precio:+$("opP").value, part:+$("opU").value};
+  if(!o.fecha||!o.fondo||!o.importe||!o.precio||!o.part) return alert("Rellena fecha, fondo, importe, precio y participaciones");
+  P.operaciones.push(o); setDirty(true);
+  ["opI","opP","opU"].forEach(id=>{ $(id).value=""; delete $(id).dataset.manual; });
+  renderDatos();
+};
+addEventListener("beforeunload", e=>{ if(dirty){ e.preventDefault(); e.returnValue=""; } });
+
+$("webGuardarClave").onclick = ()=>{
+  const a=$("webClave1").value, b=$("webClave2").value;
+  if(a.length<12) return alert("La contraseña debe tener al menos 12 caracteres.");
+  if(a!==b) return alert("Las contraseñas no coinciden.");
+  webAccion($("webGuardarClave"), "/api/web/clave", {clave:a}, ()=>{ $("webClave1").value=$("webClave2").value=""; alert("Contraseña guardada. Ahora pulsa «Publicar ahora»."); });
+};
+$("webPublicar").onclick = ()=>{
+  if(!confirm("Se subirá a GitHub Pages la copia CIFRADA de tus datos (la primera vez se crea el repositorio público «patrimonio-olmos-rayrolles» en tu cuenta). ¿Publicar?")) return;
+  webAccion($("webPublicar"), "/api/web/publicar", {subir:true}, r=>{ if(r.resultado==="publicado" && r.url) alert("Publicado en:\n"+r.url+"\n\nLa primera vez GitHub tarda 1-2 minutos en activar la página."); });
+};
+$("webVista").onclick = ()=> webAccion($("webVista"), "/api/web/publicar", {subir:false}, ()=>window.open("/vista-web/","_blank"));
+$("webActiva").onchange = ()=> webAccion($("webActiva"), "/api/web/config", {activa:$("webActiva").checked});
+$("webAuto").onchange = ()=> webAccion($("webAuto"), "/api/web/config", {autoarranque:$("webAuto").checked});
+$("btnPdf").onclick = exportarPdf;
+{ const t = new URLSearchParams(location.search).get("pestana"); if(t && $("t-"+t)) state.tab = t; } /* p. ej. ?pestana=banco */
+["bkMax","bkTipo","bkPlazo","bkEntrada"].forEach(id=>$(id).addEventListener("input",renderBanco));
+if(MODO_WEB){ /* en la web no se edita ni hay datos personales: sin pestañas Datos ni Banco */
+  for(const t of ["datos","banco"]){ document.querySelector(`[data-t="${t}"]`).remove(); $("t-"+t).remove(); }
+  $("savebar").remove();
+}
+const th = store.get("theme",null); if(th) document.documentElement.dataset.theme = th;
+setupChartDefaults();
+cargar();
+setInterval(()=>{ if(document.visibilityState==="visible" && !dirty) cargar(); }, 15*60*1000); // precios cada 15 min
+</script>
+</body>
+</html>
